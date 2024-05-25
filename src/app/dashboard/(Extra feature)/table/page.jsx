@@ -64,7 +64,7 @@ const customStyles = {
     },
   },
 };
-const page = () => {
+const ExtraFeature = () => {
   // solved Hydration failed
   const [loader, setLoader] = useState(true);
   useEffect(() => {
@@ -118,4 +118,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default ExtraFeature;

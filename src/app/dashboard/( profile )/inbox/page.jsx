@@ -47,7 +47,7 @@ createTheme(
   "dark"
 );
 
-const page = () => {
+const Inbox = () => {
   // solved Hydration failed
   const [loader, setLoader] = useState(true);
   useEffect(() => {
@@ -95,4 +95,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Inbox;

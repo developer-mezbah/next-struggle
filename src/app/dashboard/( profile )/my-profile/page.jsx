@@ -1,5 +1,6 @@
 import PageTitle from "@/DasComponent/Others/PageTitle";
 import SubmitButton from "@/DasComponent/Others/SubmitButton";
+import Image from "next/image";
 import React from "react";
 
 const MyProfile = () => {
@@ -12,7 +13,9 @@ const MyProfile = () => {
             <div className="col-span-6">
               <div className=" rounded-xl dashboard-form-bg p-[30px] text-textColor">
                 <div>
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src="/images/avatar.jpg"
                     alt=""
                     className="rounded-full w-[80px] h-[80px] object-cover"
@@ -36,7 +39,9 @@ const MyProfile = () => {
                   </p>
                   <br />
                   <div>
-                    <button className="btn bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 delay-75">Log Out</button>
+                    <button className="btn bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 delay-75">
+                      Log Out
+                    </button>
                   </div>
                 </div>
               </div>
@@ -166,7 +171,11 @@ const MyProfile = () => {
                           </div>
                         </div>
                         <div className="mt-10">
-                          <SubmitButton text={"Update Profile"} submit={false} className={"bg-red-500"}/>
+                          <SubmitButton
+                            text={"Update Profile"}
+                            submit={false}
+                            className={"bg-red-500"}
+                          />
                         </div>
                       </div>
                     </div>

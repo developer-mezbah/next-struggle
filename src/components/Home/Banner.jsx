@@ -29,10 +29,10 @@ const Banner = () => {
   useEffect(() => {
     let video = document.getElementById("banner-video");
     const btn = document.getElementById("pause-btn");
-    window.onload = function () {
-      video.muted = false;
-      video.play();
-    };
+    // window.onload = function () {
+    //   video.muted = false;
+    //   video.play();
+    // };
     // video.muted = false;
     btn.onclick = () => {
       if (video.paused) {
@@ -54,6 +54,7 @@ const Banner = () => {
             width="100%"
             height="100%"
             loop
+            autoPlay
           >
             <source
               src="https://res.cloudinary.com/dmiz7yey9/video/upload/v1716107645/Video/Worlds_top_Green_garment_factories_in_Bangladesh_ubhsfw.mp4"
