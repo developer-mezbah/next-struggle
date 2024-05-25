@@ -1,0 +1,7 @@
+.footer-banner{
+    background-image: url("/images/banner-shadow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #132911;
+    background-size: contain;
+}

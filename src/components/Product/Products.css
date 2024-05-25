@@ -1,0 +1,30 @@
+
+.products {
+ columns: 2;
+ column-gap: 10px;
+}
+.products .box{
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.products .box img{
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px){
+  .products {
+    column-gap: 5px;
+   }
+   .products .box{
+     padding: 10px;
+     margin-bottom: 5px;
+   }
+}
+@media (max-width: 450px){
+  .products {
+    columns: 1;
+   }
+}
