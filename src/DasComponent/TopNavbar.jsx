@@ -15,7 +15,7 @@ import Link from "next/link";
 const TopNavbar = ({ handleNavbar, smallNavbar }) => {
   return (
     <div
-      className={`top-navbar bg-bgDark fixed right-0 top-0 h-[65px] flex items-center justify-between px-5 border-l-[1px] border-gray-700 z-50 ${smallNavbar? "md:left-[80px] left-[50px]": "left-[250px]"}`}
+      className={`top-navbar bg-bgDark fixed right-0 top-0 h-[65px] flex items-center justify-between px-5 border-l-[1px] border-gray-700 z-50 ${smallNavbar? "md:left-[80px] left-[50px]": "left-[150px] md:left-[250px]"}`}
       // style={smallNavbar ? { left: "80px" } : { left: "250px" }}
     >
       <div

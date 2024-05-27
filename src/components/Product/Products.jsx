@@ -1,83 +1,26 @@
 import Image from "next/image";
-import React from "react";
 import "./Products.css";
 
-const Products = () => {
+const Products = ({ data }) => {
   return (
     <div className="mt-10">
       <div className="products">
-        <div className="box">
-          <Image
-            src="/images/products/img1.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img2.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img3.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img4.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img5.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img6.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img7.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img8.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
-        <div className="box">
-          <Image
-            src="/images/products/img9.jpeg"
-            width={800}
-            height={500}
-            alt=""
-          />
-        </div>
+        {data.length > 0 ? (
+          data?.map((item, index) => (
+            <div
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              key={item?._id}
+              className="box"
+            >
+              <Image src={item?.img} width={800} height={500} alt="" />
+            </div>
+          ))
+        ) : (
+          <h1 className="text-accent text-4xl w-full font-bold">
+            There is no product in this category.
+          </h1>
+        )}
       </div>
     </div>
   );

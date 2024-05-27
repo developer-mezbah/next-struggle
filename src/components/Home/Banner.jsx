@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { FaCirclePause } from "react-icons/fa6";
-import { FaPlayCircle } from "react-icons/fa";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { FaPlayCircle } from "react-icons/fa";
+import { FaCirclePause } from "react-icons/fa6";
 
 const Star = ({ className }) => {
   return (
@@ -55,6 +55,7 @@ const Banner = () => {
             height="100%"
             loop
             autoPlay
+            muted
           >
             <source
               src="https://res.cloudinary.com/dmiz7yey9/video/upload/v1716107645/Video/Worlds_top_Green_garment_factories_in_Bangladesh_ubhsfw.mp4"

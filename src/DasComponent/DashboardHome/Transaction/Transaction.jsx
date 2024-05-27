@@ -3,7 +3,7 @@ import styles from "./transactions.module.css";
 
 const Transaction = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container+" md:block hidden"}>
       <h2 className={styles.title}>Latest Transactions</h2>
       <table className={styles.table}>
         <thead>

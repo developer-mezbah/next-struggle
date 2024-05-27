@@ -11,8 +11,6 @@ const Register = () => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-
-
   const [validation, setValidation] = useState({
     lowercase: false,
     uppercase: false,
@@ -72,7 +70,7 @@ const Register = () => {
             toast.success("Register successfull.");
             e.target.reset();
             setError("");
-            router.push("/");
+            router.push("/dashboard");
           }
         })
         .catch((err) => {
@@ -85,7 +83,7 @@ const Register = () => {
     }
   };
   if (user) {
-    return router.push("/");
+    return router.push("/dashboard");
   }
   return (
     <div className="mt-[150px]">

@@ -117,6 +117,11 @@ const Footer = () => {
             <li>
               <LogoutBtn/>
             </li>
+            <li>
+            <Link className="text-[16px]" href="/dashboard">
+                Dashobard
+              </Link>
+            </li>
           </ul>
           <p className="text-textLight">© 2024FAHIMKHAN - All Right Reserved</p>
         </div>

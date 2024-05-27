@@ -32,7 +32,7 @@ const AdminContextProvider = ({ children }) => {
   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
     setLoading(false);
-    console.log("user ovserbing runging", user);
+    // console.log("user ovserbing runging", user);
   });
 
 

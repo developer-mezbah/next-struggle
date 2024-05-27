@@ -8,8 +8,8 @@ const Login = () => {
   const [error, setError] = useState(false);
   const { logIn, user } = useContext(AdminContext);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
+  const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -22,6 +22,7 @@ const Login = () => {
           toast.success("Login Successfull.");
           e.target.reset();
           setError("");
+          router.push("/dashboard");
         }
       })
       .catch((err) => {
@@ -33,9 +34,8 @@ const Login = () => {
         );
       });
   };
-
   if (user) {
-    return router.push("/");
+    return router.push("/dashboard");
   }
   return (
     <div className="mt-[150px]">

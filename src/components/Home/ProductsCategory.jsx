@@ -1,41 +1,12 @@
 "use client";
+import { Categories } from "@/utils/FakeData/Categories";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
 const ProductsCategory = () => {
-  const data = [
-    {
-      _id: 1,
-      name: "Denim",
-      img: "/images/products-category/img1.jpg",
-    },
-    {
-      _id: 3,
-      name: "Denim",
-      img: "/images/products-category/img3.jpg",
-    },
-    {
-      _id: 4,
-      name: "Denim",
-      img: "/images/products-category/img4.jpg",
-    },
-    {
-      _id: 2,
-      name: "Denim",
-      img: "/images/products-category/img2.jpg",
-    },
-    {
-      _id: 5,
-      name: "Denim",
-      img: "/images/products-category/img5.jpg",
-    },
-    {
-      _id: 6,
-      name: "Denim",
-      img: "/images/products-category/img6.jpg",
-    },
-  ];
+
   return (
     <div className="wrapper">
       <h1
@@ -47,10 +18,11 @@ const ProductsCategory = () => {
         Offering a Diverse <br /> Range of Products.
       </h1>
       <div className="md:mt-[100px] mt-[50px] grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-10 gap-5">
-        {data?.slice(0, 6).map((item, index) => {
+        {Categories?.slice(0, 6).map((item, index) => {
          
           return (
-            <div
+            <Link
+            href={`/product/${item?._id}`}
               className={`relative group h-[400px] overflow-hidden mx-auto ${
                 index === 1 || index === 4 ? "md:mt-10" : "md:-mt-10"
               }`}
@@ -78,7 +50,7 @@ const ProductsCategory = () => {
                   <HiOutlineArrowRight />
                 </h3>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

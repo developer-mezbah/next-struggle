@@ -10,7 +10,7 @@ const AosHook = ({ children }) => {
     document.querySelectorAll("img").forEach((img) => {
       img.addEventListener("load", () => AOS.refresh());
     });
-    // AOS.refresh()
+ 
   }, []);
 
   return children;

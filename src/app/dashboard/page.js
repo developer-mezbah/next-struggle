@@ -15,7 +15,7 @@ const page = () => {
         <Transaction />
         {/* <Chart /> */}
       </div>
-      <div className={styles.side}>
+      <div className={styles.side+" lg:block hidden"}>
         <RightBar />
       </div>
     </div>

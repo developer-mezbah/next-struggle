@@ -16,6 +16,7 @@
   background-color: transparent;
   inset-inline-start: 0.5rem;
   opacity: 0.5;
+  @apply md:block hidden;
 }
 .navbar-bullet li:hover:before {
   border: 1px solid #fff;

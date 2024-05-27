@@ -40,14 +40,14 @@ const Navbar = () => {
       <div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={smallNavbar ? "md:w-[80px] w-[50px] h-full" : "w-[250px] h-full"}
+        className={smallNavbar ? "md:w-[80px] w-[50px] h-full" : "md:w-[250px] w-[150px] overflow-hidden h-full"}
       >
-        <div className={smallNavbar ? "hidden" : "w-[250px] fixed"}>
+        <div className={smallNavbar ? "hidden" : "md:w-[250px] w-[150px] overflow-hidden fixed"}>
           <div className="logo py-2">
             <Link href={"/dashboard"}>
               <Image
                 src={"/images/logo.png"}
-                className="mx-auto h-[70px] my-1 object-cover"
+                className="mx-auto h-[70px] md:w-full w-[150px] my-1 object-cover"
                 width={200}
                 height={100}
                 alt="Logo"
