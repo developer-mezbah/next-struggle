@@ -1,19 +1,21 @@
 import Image from "next/image";
 import "./Products.css";
+import Link from "next/link";
 
 const Products = ({ data }) => {
   return (
     <div className="mt-10">
-      <div className="products">
+      <div
+        className="products"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+      >
         {data.length > 0 ? (
           data?.map((item, index) => (
-            <div
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-bottom"
-              key={item?._id}
-              className="box"
-            >
-              <Image src={item?.img} width={800} height={500} alt="" />
+            <div key={item?._id} className="box">
+              <Link href="/product-details">
+                <Image src={item?.img} width={500} height={500} alt="" />
+              </Link>
             </div>
           ))
         ) : (

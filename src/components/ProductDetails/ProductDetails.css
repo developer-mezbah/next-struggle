@@ -1,0 +1,24 @@
+.product-details-pagination {
+  @apply relative mt-2 cursor-pointer;
+}
+.product-details-pagination::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+#lens {
+  z-index: 2;
+  position: absolute;
+
+  @apply md:w-[300px] md:h-[300px] w-[100px] h-[100px] rounded-full;
+  border: 2px solid green;
+  background-repeat: no-repeat;
+  cursor: none;
+}

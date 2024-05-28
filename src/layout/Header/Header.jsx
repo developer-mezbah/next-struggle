@@ -73,7 +73,7 @@ const Header = () => {
     {
       _id: 2,
       name: "Product",
-      url: "/product",
+      url: "/product/1",
     },
     {
       _id: 3,
