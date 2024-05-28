@@ -17,7 +17,7 @@
   z-index: 2;
   position: absolute;
 
-  @apply md:w-[300px] md:h-[300px] w-[100px] h-[100px] rounded-full;
+  @apply md:w-[300px] md:h-[300px] w-[100px] h-[100px];
   border: 2px solid green;
   background-repeat: no-repeat;
   cursor: none;

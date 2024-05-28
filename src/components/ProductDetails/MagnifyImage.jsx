@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const MagnifyImage = ({ img }) => {
+  const [showMagnifier, setShowMagnifier] = useState(false)
   useEffect(() => {
     document
       .getElementById("img-container")
@@ -97,12 +98,12 @@ const MagnifyImage = ({ img }) => {
     imageZoom("featured");
   }, []);
   return (
-    <div>
+    <div onMouseEnter={() => setShowMagnifier(true)} onMouseLeave={() => setShowMagnifier(false)} className="p-5">
       <div id="content-wrapper">
         <div className="column">
           <div id="img-container">
-            <div id="lens" />
-            <Image className="w-full max-h-[80vh]" width={800} height={800} alt="" id="featured" src={img} />
+            {<div className={`${showMagnifier ? "block": "hidden"}`} id="lens" />}
+            <Image className="max-h-[80vh]" width={800} height={800} alt="" id="featured" src={img} />
           </div>
         </div>
       </div>
