@@ -106,3 +106,25 @@
     scale: 1;
   }
 }
+
+
+
+/* Custom navbar scroll bar */
+.dasboard-navbar-scrollbar::-webkit-scrollbar{
+  width: 10px;
+}
+/* Track */
+.dasboard-navbar-scrollbar::-webkit-scrollbar-track {
+  background: #111C43;
+}
+
+/* Handle */
+.dasboard-navbar-scrollbar::-webkit-scrollbar-thumb {
+  background: #111C43;
+}
+
+/* Handle on hover */
+.dasboard-navbar-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #767E92;
+  border-radius: 10px;
+}

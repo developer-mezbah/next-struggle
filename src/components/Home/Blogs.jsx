@@ -1,58 +1,60 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const Blogs = () => {
+const Blogs = ({ data }) => {
   // charector 61
-  const data = [
-    {
-      _id: 1,
-      category: "Branding",
-      title: "What is the branding, and what we need it?",
-      description:
-        "On the other hand, we denounce with righteous indignation and",
-      img: "/images/articles/img1.jpg",
-    },
-    {
-      _id: 2,
-      category: "TIKTOK",
-      title: "What is the branding, and what we need it?",
-      description:
-        "On the other hand, we denounce with righteous indignation and",
-      img: "/images/articles/img2.jpg",
-    },
-    {
-      _id: 3,
-      category: "LOGO DESIGN",
-      title: "What is the branding, and what we need it?",
-      description:
-        "On the other hand, we denounce with righteous indignation and",
-      img: "/images/articles/img3.jpg",
-    },
-    {
-      _id: 4,
-      category: "FB",
-      title: "What is the branding, and what we need it?",
-      description:
-        "On the other hand, we denounce with righteous indignation and",
-      img: "/images/articles/img4.jpg",
-    },
-    {
-      _id: 5,
-      category: "AI",
-      title: "What is the branding, and what we need it?",
-      description:
-        "On the other hand, we denounce with righteous indignation and",
-      img: "/images/articles/img5.jpg",
-    },
-    {
-      _id: 6,
-      category: "Branding",
-      title: "What is the branding, and what we need it?",
-      description:
-        "On the other hand, we denounce with righteous indignation and",
-      img: "/images/articles/img6.jpg",
-    },
-  ];
+  // const data = [
+  //   {
+  //     _id: 1,
+  //     category: "Branding",
+  //     title: "What is the branding, and what we need it?",
+  //     description:
+  //       "On the other hand, we denounce with righteous indignation and",
+  //     img: "/images/articles/img1.jpg",
+  //   },
+  //   {
+  //     _id: 2,
+  //     category: "TIKTOK",
+  //     title: "What is the branding, and what we need it?",
+  //     description:
+  //       "On the other hand, we denounce with righteous indignation and",
+  //     img: "/images/articles/img2.jpg",
+  //   },
+  //   {
+  //     _id: 3,
+  //     category: "LOGO DESIGN",
+  //     title: "What is the branding, and what we need it?",
+  //     description:
+  //       "On the other hand, we denounce with righteous indignation and",
+  //     img: "/images/articles/img3.jpg",
+  //   },
+  //   {
+  //     _id: 4,
+  //     category: "FB",
+  //     title: "What is the branding, and what we need it?",
+  //     description:
+  //       "On the other hand, we denounce with righteous indignation and",
+  //     img: "/images/articles/img4.jpg",
+  //   },
+  //   {
+  //     _id: 5,
+  //     category: "AI",
+  //     title: "What is the branding, and what we need it?",
+  //     description:
+  //       "On the other hand, we denounce with righteous indignation and",
+  //     img: "/images/articles/img5.jpg",
+  //   },
+  //   {
+  //     _id: 6,
+  //     category: "Branding",
+  //     title: "What is the branding, and what we need it?",
+  //     description:
+  //       "On the other hand, we denounce with righteous indignation and",
+  //     img: "/images/articles/img6.jpg",
+  //   },
+  // ];
+
   return (
     <div className="bg-accent py-10">
       <div className="wrapper">
@@ -69,7 +71,10 @@ const Blogs = () => {
           {data?.map((item, index) => {
             const cal = index % 2;
             return (
-              <div
+              <Link
+                href={`/news?article=${item?.title
+                  .replace(/[^a-zA-Z0-9-.\s]/g, "")
+                  .replace(/ /g, "-")}&id=${item?._id}`}
                 className="flex sm:flex-row flex-col gap-5 sm:gap-0 items-center sm:h-[220px] overflow-hidden"
                 key={item?._id}
                 data-aos={`${cal !== 0 ? "fade-left" : "fade-right"}`}
@@ -97,7 +102,7 @@ const Blogs = () => {
                       : item?.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

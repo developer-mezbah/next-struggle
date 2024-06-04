@@ -8,7 +8,24 @@ import Youtube from "@/components/Home/Youtube";
 import MasterLayout from "@/layout/MasterLayout";
 import Image from "next/image";
 
-export default function Home() {
+async function getData() {
+  try {
+    const categories = await (
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category`, {
+        cache: "no-store",
+      })
+    ).json();
+    const newsData = await (
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news`)
+    ).json();
+    return { categories,newsData };
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export default async function Home() {
+  const data = await getData();
   return (
     <MasterLayout>
       {/* Banner section  */}
@@ -23,13 +40,13 @@ export default function Home() {
       </div>
 
       {/* Categories  */}
-      <ProductsCategory />
+      <ProductsCategory categories={data?.categories?.data} />
       {/* Licenses  */}
-      <Licenses/>
+      <Licenses />
       {/* Blogs */}
-      <Blogs/>
+      <Blogs data={data?.newsData?.data.slice(0, 6)} />
       {/* Youtube Section  */}
-      <Youtube/>
+      <Youtube />
     </MasterLayout>
   );
 }

@@ -11,7 +11,7 @@ const Tabs = ({ Categories, categoryId,handleProducts }) => {
             key={item?._id}
             className={`${
               item._id == categoryId ? "bg-primary hover:text-black" : ""
-            } md:py-5 py-3 md:px-10 px-5 rounded-[20px] hover:text-green-500`}
+            } md:py-5 py-3 md:px-10 px-5 rounded-[20px]`}
           >
             {item?.name}
           </button>

@@ -103,7 +103,7 @@ const MagnifyImage = ({ img }) => {
         <div className="column">
           <div id="img-container">
             {<div className={`${showMagnifier ? "block": "hidden"}`} id="lens" />}
-            <Image className="max-h-[80vh]" width={800} height={800} alt="" id="featured" src={img} />
+            <Image className="max-h-[70vh] object-scale-down" width={800} height={800} alt="" id="featured" src={img} />
           </div>
         </div>
       </div>

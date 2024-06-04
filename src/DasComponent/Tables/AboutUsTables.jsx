@@ -1,63 +1,90 @@
-"use client"
+"use client";
+import client_api from "@/Helper/api_fetch";
 import Loading from "@/components/Loading/Loading";
 import { customStyles } from "@/utils/TableTheme";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { FaTrashCan } from "react-icons/fa6";
+import { FaRegEdit } from "react-icons/fa";
+import AboutUsForm from "../Forms/AboutUsForm";
+import { DeleteAlert } from "@/Helper/DeleteAlert";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const AboutUsTables = () => {
   const [loader, setLoader] = useState(true);
-  useEffect(() => {
-    setLoader(false);
-  }, []);
-  if (loader) {
-    return <Loading/>;
-  }
-  const data = [
-    {
-      name: "Beetlejuice",
-      email: "developer.mezbah@gmail.com",
-      id: 1,
-      createAt: "01/ 01/ 2024",
-      DeleteID: 10,
-    },
-    {
-      name: "Mezbah Uddin",
-      email: "mk6449248@gmail.com",
-      id: 2,
-      createAt: "01/ 01/ 2024",
-      DeleteID: 10,
-    },
-  ];
+  const [data, setData] = useState([]);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
+  const [updateFormData, setUpdateFormData] = useState({});
 
+  const router = useRouter();
+
+  useEffect(() => {
+    client_api
+      .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`)
+      .then((data) => {
+        if (data.status) {
+          setData(data?.data);
+        }
+      });
+    setLoader(false);
+  }, [showUpdateForm, loader]);
+  if (loader) {
+    return <Loading />;
+  }
   const columns = [
     {
-      name: "Name",
-      selector: (row) => row?.name,
+      name: "Title",
+      selector: (row) => row?.title,
     },
     {
-      name: "Email",
-      selector: (row) => row?.email,
-    },
-    {
-      name: "View Message",
+      name: "Image",
+      // selector: (row) => row?.createAt.substring(0, 10),
       selector: (row) => (
-        <div className=" cursor-pointer	bg-purple-50 text-purple-600 px-[10px] py-0 rounded-full">
-          <Link href={`/dashboard/inbox/details/${row?.id}`}>View</Link>
-        </div>
+        <Image
+          src={
+            row?.img?.includes("http://") ||
+            row?.img?.includes("https://")
+              ? row?.img
+              : "/images/not-found.png"
+          }
+          width={100}
+          height={100}
+          alt=""
+          className="py-2 w-20 h-20 object-scale-down"
+        />
       ),
-    },
-    {
-      name: "Date",
-      selector: (row) => row?.createAt.substring(0, 10),
     },
 
     {
       name: "Action",
       selector: (row) => (
-        <div className="p-2 cursor-pointer text-red-400">
-          <FaTrashCan onClick={() => DeleteMessage(row?.DeleteID)} />
+        <div className="flex text-2xl gap-3">
+          <FaTrashCan
+            className="text-red-400 cursor-pointer "
+            onClick={() =>
+              DeleteAlert(
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us?id=${row?._id}`
+              ).then((result) => {
+                if (result) {
+                  router.refresh();
+                  toast.success("Data deleted!");
+                  setLoader(true);
+                } else {
+                  toast.error("Something went wrong!");
+                }
+              })
+            }
+          />
+          <FaRegEdit
+            onClick={() => {
+              setUpdateFormData(row);
+              setShowUpdateForm(true);
+            }}
+            className="cursor-pointer "
+          />
         </div>
       ),
     },
@@ -65,13 +92,20 @@ const AboutUsTables = () => {
 
   return (
     <section className="md:p-10 p-3">
-      <DataTable
-        columns={columns}
-        data={data}
-        pagination
-        theme="solarized"
-        customStyles={customStyles}
-      />
+      {showUpdateForm ? (
+        <AboutUsForm
+          updateFormData={updateFormData}
+          setShowUpdateForm={setShowUpdateForm}
+        />
+      ) : (
+        <DataTable
+          columns={columns}
+          data={data}
+          pagination
+          theme="solarized"
+          customStyles={customStyles}
+        />
+      )}
     </section>
   );
 };

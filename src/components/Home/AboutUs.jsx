@@ -1,7 +1,16 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 
 const AboutUs = () => {
+  const deleteImage = async () => {
+    try {
+      const res = await fetch("https://ibb.co/CM5k78r/2abbdafa257d930a4534f9192f971761"); // Use GET request to the delete_url
+      console.log(res);
+    } catch (error) {
+      console.error('Error deleting image:', error);
+    }
+  };
   return (
     <div className="flex md:flex-row flex-col-reverse justify-center items-center lg:gap-20 gap-10 my-10 py-10">
       <div
@@ -33,7 +42,7 @@ const AboutUs = () => {
           business, we manufacture and distribute quality apparel with a focus
           on sustainability.
         </p>
-        <button className="btn1">Learn More</button>
+        <button onClick={deleteImage} className="btn1">Learn More</button>
       </div>
     </div>
   );

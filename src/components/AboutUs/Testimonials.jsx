@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebookF,
@@ -7,25 +8,27 @@ import {
   FaTwitter,
 } from "react-icons/fa6";
 
-const Testimonials = () => {
-  const data = [
-    {
-      _id: 1,
-      img: "/images/teams/img1.png",
-    },
-    {
-      _id: 2,
-      img: "/images/teams/img2.png",
-    },
-    {
-      _id: 3,
-      img: "/images/teams/img1.png",
-    },
-    {
-      _id: 4,
-      img: "/images/teams/img4.jpg",
-    },
-  ];
+const Testimonials = ({data}) => {
+  // console.log(data[0].instagram);
+  // console.log(data);
+  // const data = [
+  //   {
+  //     _id: 1,
+  //     img: "/images/teams/img1.png",
+  //   },
+  //   {
+  //     _id: 2,
+  //     img: "/images/teams/img2.png",
+  //   },
+  //   {
+  //     _id: 3,
+  //     img: "/images/teams/img1.png",
+  //   },
+  //   {
+  //     _id: 4,
+  //     img: "/images/teams/img4.jpg",
+  //   },
+  // ];
   return (
     <div className="wrapper my-10">
       <h1
@@ -72,22 +75,22 @@ const Testimonials = () => {
                 alt=""
               />
               <div className="flex gap-4 text-2xl">
-                <button className=" hover:text-textLight">
+                <Link href={item?.facebook || "/"} target="_blank" className=" hover:text-textLight">
                   <FaFacebookF />
-                </button>
-                <button className=" hover:text-textLight">
+                </Link>
+                <Link href={item?.twitter || "/"} target="_blank" className=" hover:text-textLight">
                   <FaTwitter />
-                </button>
-                <button className=" hover:text-textLight">
+                </Link>
+                <Link href={item?.linkedin || "/"} target="_blank" className=" hover:text-textLight">
                   <FaLinkedinIn />
-                </button>
-                <button className=" hover:text-textLight">
+                </Link>
+                <Link href={item?.instagram || "/"} target="_blank" className=" hover:text-textLight">
                   <FaInstagram />
-                </button>
+                </Link>
               </div>
               <div className="leading-[24px]">
-                <p>+1 (378) 400-1234</p>
-                <p>h&m@email.com</p>
+                <p className="text-center">{item?.number}</p>
+                <p className="text-center">{item?.email}</p>
               </div>
             </div>
           </div>

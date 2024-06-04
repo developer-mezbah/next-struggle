@@ -4,22 +4,28 @@ import Tabs from "./Tabs";
 import Products from "./Products";
 import { MdArrowForwardIos } from "react-icons/md";
 import { ProductsData } from "@/utils/FakeData/Products";
-import { Categories } from "@/utils/FakeData/Categories";
+// import { Categories } from "@/utils/FakeData/Categories";
 import Loading from "../Loading/Loading";
 
-const ProductPage = ({ categoryId }) => {
+const ProductPage = ({ categoryId, categories }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const [categories, setCategories] = useState([]);
-  const [catId, setCatId] = useState(categoryId || 1);
+  // const [categories, setCategories] = useState([]);
+  const [catId, setCatId] = useState(
+    categoryId == "1" ? categories[0]._id : categoryId
+  );
   useEffect(() => {
     setLoader(true);
-    const filterData = ProductsData.filter(
-      (category) => category.categoryId == categoryId
-    );
-    setData(filterData);
-    setLoader(false);
-  }, []);
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category/${catId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status) {
+          setData(data.data);
+          setLoader(false);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, [catId]);
 
   const handleProducts = (id) => {
     setLoader(true);
@@ -34,7 +40,7 @@ const ProductPage = ({ categoryId }) => {
     <div className="md:mt-[100px] mt-[50px]">
       <div className="wrapper">
         <Tabs
-          Categories={Categories}
+          Categories={categories}
           categoryId={catId}
           handleProducts={handleProducts}
         />

@@ -10,6 +10,7 @@ const LogoutBtn = () => {
       <button
         onClick={() => {
           logOut().then((res) => {
+            localStorage.removeItem('token')
             toast.success("Logout success.");
           });
         }}

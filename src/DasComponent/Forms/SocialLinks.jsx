@@ -3,54 +3,52 @@ import SubmitButton from "../Others/SubmitButton";
 import FormTitle from "../Others/FormTitle";
 
 const SocialLinks = () => {
-  const inputClass = "das-input";
-  const lableClass = "das-label";
   return (
     <div className="dashboard-form-bg flex flex-col">
       <FormTitle text={"Social Link"} />
       <form className="das-form">
         <div className="grid gap-6 mb-6 md:grid-cols-2">
           <div>
-            <label htmlFor="facebook" className={lableClass}>
+            <label htmlFor="facebook" className="das-label">
               Facebook
             </label>
             <textarea
               type="text"
               id="facebook"
-              className={inputClass}
+              className="das-input"
               placeholder="Facebook Link"
             />
           </div>
           <div>
-            <label htmlFor="linkedin" className={lableClass}>
+            <label htmlFor="linkedin" className="das-label">
               Linkedin
             </label>
             <textarea
               type="text"
               id="linkedin"
-              className={inputClass}
+              className="das-input"
               placeholder="Linkedin Link"
             />
           </div>
           <div>
-            <label htmlFor="github" className={lableClass}>
+            <label htmlFor="github" className="das-label">
               Github
             </label>
             <textarea
               type="text"
               id="github"
-              className={inputClass}
+              className="das-input"
               placeholder="Github Link"
             />
           </div>
           <div>
-            <label htmlFor="medium" className={lableClass}>
+            <label htmlFor="medium" className="das-label">
               Medium
             </label>
             <textarea
               type="text"
               id="medium"
-              className={inputClass}
+              className="das-input"
               placeholder="Medium Link"
             />
           </div>

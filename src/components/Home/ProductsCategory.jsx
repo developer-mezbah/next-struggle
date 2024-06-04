@@ -1,12 +1,11 @@
 "use client";
-import { Categories } from "@/utils/FakeData/Categories";
+// import { Categories } from "@/utils/FakeData/Categories";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
-const ProductsCategory = () => {
-
+const ProductsCategory = ({categories}) => {
   return (
     <div className="wrapper">
       <h1
@@ -18,7 +17,7 @@ const ProductsCategory = () => {
         Offering a Diverse <br /> Range of Products.
       </h1>
       <div className="md:mt-[100px] mt-[50px] grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-10 gap-5">
-        {Categories?.slice(0, 6).map((item, index) => {
+        {categories?.slice(0, 6).map((item, index) => {
          
           return (
             <Link

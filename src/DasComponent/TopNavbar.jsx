@@ -11,11 +11,18 @@ import { RiFullscreenExitFill } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RxDashboard } from "react-icons/rx";
 import Link from "next/link";
+import { useContext } from "react";
+import { AdminContext } from "@/Context/AdminContext";
 
 const TopNavbar = ({ handleNavbar, smallNavbar }) => {
+  const { user } = useContext(AdminContext);
   return (
     <div
-      className={`top-navbar bg-bgDark fixed right-0 top-0 h-[65px] flex items-center justify-between px-5 border-l-[1px] border-gray-700 z-50 ${smallNavbar? "md:left-[80px] left-[50px]": "left-[150px] md:left-[250px]"}`}
+      className={`top-navbar bg-bgDark fixed right-0 top-0 h-[65px] flex items-center justify-between px-5 border-l-[1px] border-gray-700 z-50 ${
+        smallNavbar
+          ? "md:left-[80px] left-[50px]"
+          : "left-[150px] md:left-[250px]"
+      }`}
       // style={smallNavbar ? { left: "80px" } : { left: "250px" }}
     >
       <div
@@ -82,9 +89,9 @@ const TopNavbar = ({ handleNavbar, smallNavbar }) => {
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="text-sm text-textColor">Mezbah Uddin</span>
+              <span className="text-sm text-textColor">{user?.displayName}</span>
               <span className="text-xs font-light text-textColor">
-                Web Developer
+                Admin
               </span>
             </div>
           </li>

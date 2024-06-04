@@ -4,8 +4,18 @@ import Licenses from "@/components/Home/Licenses";
 import ReUseableBanner from "@/components/Reuseable/ReUseableBanner";
 import MasterLayout from "@/layout/MasterLayout";
 import React from "react";
-
-const page = () => {
+async function getData() {
+  try {
+    const data = await (
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/license`)
+    ).json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+const page = async () => {
+  const data = await getData()
   return (
     <MasterLayout>
       <div>
@@ -25,7 +35,7 @@ const page = () => {
         {/* Brands slider  */}
         <BrandsSlider/>
         {/* Brand and Licenses Details  */}
-        <BrandDetails/>
+        <BrandDetails data={data?.data}/>
         <Licenses/>
       </div>
     </MasterLayout>

@@ -40,9 +40,9 @@ const Navbar = () => {
       <div
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={smallNavbar ? "md:w-[80px] w-[50px] h-full" : "md:w-[250px] w-[150px] overflow-hidden h-full"}
+        className={smallNavbar ? "md:w-[80px] w-[50px] h-full" : "md:w-[250px] w-[150px] overflow-x-hidden overflow-y-scroll h-screen dasboard-navbar-scrollbar"}
       >
-        <div className={smallNavbar ? "hidden" : "md:w-[250px] w-[150px] overflow-hidden fixed"}>
+        <div className={smallNavbar ? "hidden" : "md:w-[250px] w-[150px]"}>
           <div className="logo py-2">
             <Link href={"/dashboard"}>
               <Image

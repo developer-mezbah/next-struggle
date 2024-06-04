@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
   const { user, loading } = useContext(AdminContext);
   const router = useRouter();
   if (loading) {
-    <Loading />;
+    return <Loading />;
   }
   if (user) {
     return children;

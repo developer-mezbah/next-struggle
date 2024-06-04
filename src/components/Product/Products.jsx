@@ -13,8 +13,12 @@ const Products = ({ data }) => {
         {data.length > 0 ? (
           data?.map((item, index) => (
             <div key={item?._id} className="box">
-              <Link href="/product-details">
-                <Image src={item?.img} width={500} height={500} alt="" />
+              <Link 
+              href={`/product-details?product=${item?.title
+                .replace(/[^a-zA-Z0-9-.\s]/g, "")
+                .replace(/ /g, "-")}&id=${item?._id}`}
+              >
+                <Image src={item?.thumnailImg} width={500} height={500} alt="" />
               </Link>
             </div>
           ))

@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const Login = () => {
+const Login = ({ token }) => {
   const [error, setError] = useState(false);
   const { logIn, user } = useContext(AdminContext);
   const [loading, setLoading] = useState(false);
-
   const router = useRouter();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -18,7 +18,11 @@ const Login = () => {
     logIn(email, password)
       .then((result) => {
         if (result) {
+          console.log(result?.user?.accessToken);
           setLoading(false);
+          token(result?.user?.accessToken).then((data) => {
+            localStorage.setItem("token", data);
+          });
           toast.success("Login Successfull.");
           e.target.reset();
           setError("");

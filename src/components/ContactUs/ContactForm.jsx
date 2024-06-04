@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import { GiWorld } from "react-icons/gi";
@@ -9,8 +10,13 @@ import {
   FaTwitter,
 } from "react-icons/fa6";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { SiAmazonsimpleemailservice } from "react-icons/si";
 
-const ContactForm = () => {
+const ContactForm = ({data}) => {
+  const [currentDomain, setCurrentDomain] = useState("");
+  useEffect(() => {
+    setCurrentDomain(window.location.origin);
+  }, []);
   return (
     <div className="pb-10">
       <div className="wrapper">
@@ -24,25 +30,31 @@ const ContactForm = () => {
         <div className="md:flex items-center lg:gap-10 gap-5 space-y-10">
           <div
             data-aos="fade-right"
-            className="md:w-2/3 bg-[#F4F0EC] rounded-3xl lg:p-10 p-5 lg:space-y-10 space-y-5 text-[20px]"
+            className="md:w-2/3 bg-[#F4F0EC] rounded-3xl lg:p-10 p-5 space-y-5 text-[20px]"
           >
             <div className="flex gap-3 items-center">
               <span className="bg-white rounded-full text-4xl p-3 text-primary">
                 <MdOutlineEmail />
               </span>
-              <span>info@yourdomain.com</span>
+              <span>{data?.firstEmail}</span>
+            </div>
+            <div className="flex gap-3 items-center">
+              <span className="bg-white rounded-full text-4xl p-3 text-primary">
+                <SiAmazonsimpleemailservice />
+              </span>
+              <span>{data?.secondEmail}</span>
             </div>
             <div className="flex gap-3 items-center">
               <span className="bg-white rounded-full text-4xl p-3 text-primary">
                 <FiPhone />
               </span>
-              <span>+1 (378) 400-1234</span>
+              <span>{data?.number}</span>
             </div>
             <div className="flex gap-3 items-center">
               <span className="bg-white rounded-full text-4xl p-3 text-primary">
                 <GiWorld />
               </span>
-              <span>www.yourdomain.com</span>
+              <span>{currentDomain}</span>
             </div>
             <div className="flex gap-10 text-2xl text-accent">
               <button className=" hover:text-primary">
