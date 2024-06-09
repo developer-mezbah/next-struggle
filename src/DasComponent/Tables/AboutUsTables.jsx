@@ -25,6 +25,7 @@ const AboutUsTables = () => {
     client_api
       .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`)
       .then((data) => {
+        console.log(data);
         if (data.status) {
           setData(data?.data);
         }

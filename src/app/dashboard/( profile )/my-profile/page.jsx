@@ -13,7 +13,7 @@ const MyProfile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.target.password.value.length < 6) {
-      toast.error("New Password will be 6 charector!")
+      return toast.error("New Password will be 6 charector!")
     }
     handleUpdatePassword(e.target.oldPassword.value, e.target.password.value,e);
   };
