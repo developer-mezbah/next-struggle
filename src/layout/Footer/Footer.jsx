@@ -138,7 +138,7 @@ const Footer = async () => {
               </Link>
             </li>
           </ul>
-          <p className="text-textLight">© 2024FAHIMKHAN - All Right Reserved</p>
+          <p className="text-textLight">© 2024STRUGLE-STYLE - All Right Reserved</p>
         </div>
       </div>
     </div>

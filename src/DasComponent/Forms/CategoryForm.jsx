@@ -98,11 +98,9 @@ const CategoryForm = ({ categories }) => {
               DeleteAlert(
                 `${process.env.NEXT_PUBLIC_SERVER_URL}/category?id=${row?._id}`
               ).then((result) => {
-                console.log(result);
                 if (result) {
                   router.refresh();
                   toast.success("Data deleted!");
-                  setLoader(true);
                 } else {
                   toast.error("Something went wrong!");
                 }
