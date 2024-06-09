@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Tabs from "./Tabs";
 import Products from "./Products";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
 import { ProductsData } from "@/utils/FakeData/Products";
 // import { Categories } from "@/utils/FakeData/Categories";
 import Loading from "../Loading/Loading";
@@ -10,9 +10,10 @@ import Loading from "../Loading/Loading";
 const ProductPage = ({ categoryId, categories }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
+
   // const [categories, setCategories] = useState([]);
   const [catId, setCatId] = useState(
-     categoryId == "1" ? categories[0]?._id : categoryId
+    categoryId == "1" ? categories[0]?._id : categoryId
   );
   useEffect(() => {
     setLoader(true);
@@ -36,6 +37,31 @@ const ProductPage = ({ categoryId, categories }) => {
     setData(filterData);
     setLoader(false);
   };
+
+  // pagination functionality
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const recordPerPage = 10;
+  const lastIndex = currentPage * recordPerPage;
+  const firstIndex = lastIndex - recordPerPage;
+  const records = data.slice(firstIndex, lastIndex);
+  const npage = Math.ceil(data.length / recordPerPage);
+  const numbers = [...Array(npage + 1).keys()].slice(1);
+
+  const prePage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1)
+    }
+  }
+  const changeCPage = (id) => {
+    setCurrentPage(id)
+  }
+  const nextPage = () => {
+    if (currentPage !== npage) {
+      setCurrentPage(currentPage + 1)
+    }
+  }
+  // End pagination functionality
   return (
     <div className="md:mt-[100px] mt-[50px]">
       <div className="wrapper">
@@ -68,21 +94,29 @@ const ProductPage = ({ categoryId, categories }) => {
             <span className="sr-only">Loading...</span>
           </div>
         ) : (
-          <Products data={data} />
+          <Products data={records} />
         )}
 
         {/* Pagination  */}
-        <div className="flex justify-center items-center gap-5 my-10 font-medium text-accent">
-          <button className="bg-primary rounded-full p-4 w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary">
-            01
+        <div className="flex justify-center items-center md:gap-5 gap-2 my-10 font-medium text-accent">
+          <button
+            onClick={prePage}
+            className="rounded-full w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary"
+          >
+            <MdOutlineArrowBackIosNew />
           </button>
-          <button className="rounded-full p-4 w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary">
-            02
-          </button>
-          <button className="rounded-full p-4 w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary">
-            03
-          </button>
-          <button className="rounded-full w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary">
+          {numbers.map((n, i) => (
+            <button
+              onClick={() => changeCPage(n)}
+              key={i}
+              className={`${
+                currentPage === n ? "bg-primary" : ""
+              } rounded-full p-4 w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary`}
+            >
+              {n}
+            </button>
+          ))}
+          <button onClick={nextPage} className="rounded-full w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-primary hover:bg-primary">
             <MdArrowForwardIos />
           </button>
         </div>
