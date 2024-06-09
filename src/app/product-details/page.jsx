@@ -17,7 +17,19 @@ async function getData(id) {
   }
 }
 
-
+export async function generateMetadata(props) {
+  let id = await props.searchParams["id"];
+  const data = await getData(id)
+  return {
+    title: "Product Details",
+    description: data?.data.description,
+    openGraph: {
+      title: data?.data.title,
+      images: [data?.data.thumnailImg],
+      description: data?.data.description
+    }
+  };
+}
 const page = async (props) => {
   let id = await props.searchParams["id"];
   const data = await getData(id)

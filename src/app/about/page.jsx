@@ -17,10 +17,23 @@ async function getData() {
     const review = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/review`)
     ).json();
-    return { aboutBlogs: await aboutBlogs.json(), heroData,review };
+    return { aboutBlogs: await aboutBlogs.json(), heroData, review };
   } catch (error) {
     console.log(error);
   }
+}
+
+export async function generateMetadata() {
+  const data = await getData();
+  return {
+    title: "Struggle | About US",
+    description: data?.heroData?.data?.title,
+    openGraph: {
+      title: data?.heroData?.data?.title,
+      images: [data?.heroData?.data?.img],
+      description: data?.heroData?.data?.title,
+    },
+  };
 }
 
 const About = async () => {
@@ -29,8 +42,11 @@ const About = async () => {
     <MasterLayout>
       <div>
         <ReUseableBanner title="About Us" img="/images/bg_banner2.png" />
-        <AboutBlogs aboutBlogs={data?.aboutBlogs?.data} heroData={data?.heroData?.data} />
-        <Testimonials data={data?.review?.data}/>
+        <AboutBlogs
+          aboutBlogs={data?.aboutBlogs?.data}
+          heroData={data?.heroData?.data}
+        />
+        <Testimonials data={data?.review?.data} />
       </div>
     </MasterLayout>
   );

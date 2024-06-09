@@ -29,7 +29,7 @@ const ProductDetails = ({data}) => {
       <div className="wrapper">
         <div className="lg:flex justify-between gap-10">
           <div className="relative w-full overflow-hidden">
-            <MagnifyImage img={magnifyImg} />
+            <MagnifyImage img={magnifyImg} title={data?.title} />
           </div>
           <div className="relative lg:block flex justify-center mt-7 sm:gap-5 gap-2 lg:mt-0">
             <div
@@ -49,7 +49,7 @@ const ProductDetails = ({data}) => {
                   src={data.thumnailImg}
                   width={100}
                   height={100}
-                  alt=""
+                  alt={data?.title}
                 />
               </div>
             </div>
@@ -72,7 +72,7 @@ const ProductDetails = ({data}) => {
                     src={item?.img}
                     width={100}
                     height={100}
-                    alt=""
+                    alt={data?.title}
                   />
                 </div>
               </div>

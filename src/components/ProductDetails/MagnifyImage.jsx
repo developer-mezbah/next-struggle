@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const MagnifyImage = ({ img }) => {
+const MagnifyImage = ({ img,title }) => {
   const [showMagnifier, setShowMagnifier] = useState(false)
   useEffect(() => {
     document
@@ -103,7 +103,7 @@ const MagnifyImage = ({ img }) => {
         <div className="column">
           <div id="img-container">
             {<div className={`${showMagnifier ? "block": "hidden"}`} id="lens" />}
-            <Image className="max-h-[70vh] object-scale-down" width={800} height={800} alt="" id="featured" src={img} />
+            <Image className="max-h-[70vh] object-scale-down" width={800} height={800} alt={title} id="featured" src={img} />
           </div>
         </div>
       </div>

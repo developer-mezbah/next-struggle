@@ -13,7 +13,7 @@ import { FaTrashCan } from "react-icons/fa6";
 import { DeleteAlert } from "@/Helper/DeleteAlert";
 import { useRouter } from "next/navigation";
 
-const CategoryForm = ({ categories }) => {
+const BrandsForm = ({ categories, data }) => {
   const [loader, setLoader] = useState(false);
   const [file, setFile] = useState("");
 
@@ -27,7 +27,6 @@ const CategoryForm = ({ categories }) => {
       return toast.error("Please Upload Image");
     }
     const form = new FormData(e.target);
-    const name = form.get("name");
     const img = form.get("img");
     const imgData = new FormData();
     imgData.append("image", img);
@@ -35,11 +34,9 @@ const CategoryForm = ({ categories }) => {
     client_api
       .upload_image(imgData)
       .then((result) => {
-        console.log(result);
         if (result.success) {
           client_api
-            .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/category`, {
-              name: name,
+            .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/brand`, {
               img: result.data.url,
               imgDeleteUrl: result.data.delete_url,
             })
@@ -63,10 +60,7 @@ const CategoryForm = ({ categories }) => {
   };
 
   const columns = [
-    {
-      name: "Name",
-      selector: (row) => row?.name,
-    },
+
     {
       name: "Image",
       // selector: (row) => row?.createAt.substring(0, 10),
@@ -92,11 +86,9 @@ const CategoryForm = ({ categories }) => {
           <FaTrashCan
             className="text-red-400 cursor-pointer "
             onClick={() => {
-              console.log(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/category?id=${row?._id}`
-              );
+            
               DeleteAlert(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/category?id=${row?._id}`
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/brand?id=${row?._id}`
               ).then((result) => {
                 console.log(result);
                 if (result) {
@@ -116,22 +108,9 @@ const CategoryForm = ({ categories }) => {
   return (
     <div>
       <div className="dashboard-form-bg flex flex-col">
-        <FormTitle text={"Category"} />
+        <FormTitle text={"Create Brand"} />
         <form onSubmit={handleSubmit} className="das-form">
           <div className="grid gap-6 mb-6 md:grid-cols-2">
-            <div>
-              <label htmlFor="name" className="das-label">
-                name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="das-input"
-                name="name"
-                placeholder="Write category name"
-                required
-              />
-            </div>
             <ImageUpload file={file} setFile={setFile} />
           </div>
 
@@ -142,7 +121,7 @@ const CategoryForm = ({ categories }) => {
         <FormTitle text={"Delete"} />
         <DataTable
           columns={columns}
-          data={categories?.data}
+          data={data}
           pagination
           theme="solarized"
           customStyles={customStyles}
@@ -152,4 +131,4 @@ const CategoryForm = ({ categories }) => {
   );
 };
 
-export default CategoryForm;
+export default BrandsForm;

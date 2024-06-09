@@ -7,33 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Scrollbar } from "swiper/modules";
 import "./BrandsStyle.css";
 
-const BrandsSlider = () => {
-  const data = [
-    {
-      _id: 1,
-      img: "/images/brands/img1.png",
-    },
-    {
-      _id: 2,
-      img: "/images/brands/img2.png",
-    },
-    {
-      _id: 3,
-      img: "/images/brands/img3.png",
-    },
-    {
-      _id: 4,
-      img: "/images/brands/img4.png",
-    },
-    {
-      _id: 5,
-      img: "/images/brands/img5.png",
-    },
-    {
-      _id: 6,
-      img: "/images/brands/img3.png",
-    },
-  ];
+const BrandsSlider = ({data}) => {
+  
   return (
     <div data-aos="zoom-in-down" className=" mt-10 bg-[#e9fff4]">
       <div className="wrapper">
@@ -61,7 +36,7 @@ const BrandsSlider = () => {
               autoplay={{ delay: 800, disableOnInteraction: false }}
               className="brands-slider2 py-5 px-2"
             >
-              {data.map((item) => (
+              {data?.map((item) => (
                 <SwiperSlide key={item._id}>
                   <div className="card border-0 mr-5 mt-2">
                     <Image

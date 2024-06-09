@@ -6,33 +6,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 
-const Brands = () => {
-  const data = [
-    {
-      _id: 1,
-      img: "/images/brands/img1.png",
-    },
-    {
-      _id: 2,
-      img: "/images/brands/img2.png",
-    },
-    {
-      _id: 3,
-      img: "/images/brands/img3.png",
-    },
-    {
-      _id: 4,
-      img: "/images/brands/img4.png",
-    },
-    {
-      _id: 5,
-      img: "/images/brands/img5.png",
-    },
-    {
-      _id: 6,
-      img: "/images/brands/img3.png",
-    },
-  ];
+const Brands = ({data}) => {
+
   return (
     <div className="py-10" 
     data-aos="fade-up" data-aos-duration="2000"
@@ -67,7 +42,7 @@ const Brands = () => {
           autoplay={{ delay: 800, disableOnInteraction: false }}
           className="brands-slider"
         >
-          {data.map((item) => (
+          {data?.map((item) => (
             <SwiperSlide key={item._id}>
               <div className="card border-0 mr-5 mt-2">
                 <Image

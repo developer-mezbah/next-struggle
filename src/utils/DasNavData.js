@@ -4,9 +4,10 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { ImProfile } from "react-icons/im";
 import { FcAbout } from "react-icons/fc";
 import { GoProjectSymlink } from "react-icons/go";
-import { MdOutlineContactPhone } from "react-icons/md";
-import { FaRegNewspaper } from "react-icons/fa6";
+import { MdOutlineContactPhone, MdPrecisionManufacturing } from "react-icons/md";
+import { FaNewspaper, FaPersonArrowDownToLine, FaRegNewspaper } from "react-icons/fa6";
 import { GrLicense } from "react-icons/gr";
+import { GiSwordBrandish } from "react-icons/gi";
 
 export const DasNavData = [
   {
@@ -51,10 +52,6 @@ export const DasNavData = [
       {
         name: "My Profile",
         url: "/dashboard/my-profile",
-      },
-      {
-        name: "Inbox",
-        url: "/dashboard/inbox",
       },
     ],
   },
@@ -116,6 +113,17 @@ export const DasNavData = [
     ],
   },
   {
+    pageName: "Frontend Footer",
+    pageTitle: "footer",
+    icon: <FaPersonArrowDownToLine />,
+    subItems: [
+      {
+        name: "Create & update",
+        url: "/dashboard/footer",
+      },
+    ],
+  },
+  {
     pageName: "Brands & License",
     pageTitle: "Licenses",
     icon: <GrLicense />,
@@ -127,6 +135,43 @@ export const DasNavData = [
       {
         name: "Create license",
         url: "/dashboard/license/create-license",
+      },
+    ],
+  },
+  {
+    pageName: "News & Articles",
+    pageTitle: "News",
+    icon: <FaNewspaper />,
+    subItems: [
+      {
+        name: "All newses",
+        url: "/dashboard/news/all-news",
+      },
+      {
+        name: "Create news",
+        url: "/dashboard/news/create-news",
+      },
+    ],
+  },
+  {
+    pageName: "Pages",
+    pageTitle: "Manufacturing",
+    icon: <MdPrecisionManufacturing/>,
+    subItems: [
+      {
+        name: "Create & Update",
+        url: "/dashboard/manufacturing",
+      },
+    ],
+  },
+  {
+    pageName: "Trusted Brands",
+    pageTitle: "brands",
+    icon: <GiSwordBrandish/>,
+    subItems: [
+      {
+        name: "Create & Delete",
+        url: "/dashboard/brands",
       },
     ],
   },

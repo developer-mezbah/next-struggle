@@ -1,14 +1,16 @@
 "use client";
 import Image from "next/image";
 import "./Header.css";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { GoGlobe } from "react-icons/go";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { usePathname } from "next/navigation";
+import { AdminContext } from "@/Context/AdminContext";
 
 const Header = () => {
+  const {user} = useContext(AdminContext)
   const path = usePathname();
   const [translate, setTranslate] = useState(false);
   const [navbar, setNavbar] = useState(false);
@@ -126,6 +128,7 @@ const Header = () => {
                     </Link>
                   </li>
                 ))}
+                {user && <Link className="text-[#ffffff]" href={"https://info@strugglestyle.net"}>Mail</Link>}
               </ul>
             </div>
             <div className="flex gap-3 items-center">

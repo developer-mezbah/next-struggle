@@ -14,7 +14,23 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import LogoutBtn from "@/components/LoginAndRegister/LogoutBtn";
 
-const Footer = () => {
+async function getData() {
+  try {
+    const contactUs = await (
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/footer`, {
+        cache: "no-store",
+      })
+    ).json();
+    return contactUs;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
+
+const Footer = async () => {
+  const data = await getData();
   return (
     <div className="md:mt-[350px] mt-[230px]">
       <div className="wrapper relative">
@@ -43,18 +59,17 @@ const Footer = () => {
                 alt="Footer logo"
               />
               <p className="text-textLight md:w-[400px]">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry is 
+               {data?.data?.title}
               </p>
             </div>
             <div className="space-y-5">
               <div className="flex gap-3 items-center text-md text-textLight">
                 <MdEmail />
-                <span>info@yourmail.com</span>
+                <span>{data?.data?.email}</span>
               </div>
               <div className="flex gap-3 items-center text-md text-textLight">
                 <FaPhone />
-                <span>(001) 1231 3435</span>
+                <span>{data?.data?.phone}</span>
               </div>
               <div className="flex gap-5">
                 <Link

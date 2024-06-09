@@ -2,6 +2,7 @@ import ProductPage from "@/components/Product/ProductPage";
 import ReUseableBanner from "@/components/Reuseable/ReUseableBanner";
 import MasterLayout from "@/layout/MasterLayout";
 import React from "react";
+
 async function getData() {
   try {
     const categories = await (
@@ -14,6 +15,16 @@ async function getData() {
     console.log(error);
   }
 }
+
+export function generateMetadata({params}) {
+  return {
+    title: "Struggle | Product",
+    description:
+      "Quality Textiles And Apparel With Efficiency & Sustainability",
+  };
+}
+
+
 const page = async ({params}) => {
   const data = await getData();
   return (

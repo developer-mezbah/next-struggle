@@ -12,7 +12,7 @@ const ProductPage = ({ categoryId, categories }) => {
   const [loader, setLoader] = useState(true);
   // const [categories, setCategories] = useState([]);
   const [catId, setCatId] = useState(
-    categoryId == "1" ? categories[0]._id : categoryId
+     categoryId == "1" ? categories[0]?._id : categoryId
   );
   useEffect(() => {
     setLoader(true);

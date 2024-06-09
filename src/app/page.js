@@ -18,7 +18,12 @@ async function getData() {
     const newsData = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news`)
     ).json();
-    return { categories,newsData };
+    const brand = await (
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/brand`, {
+        cache: "no-store",
+      })
+    ).json();
+    return { categories, newsData, brand };
   } catch (error) {
     console.log(error);
   }
@@ -33,7 +38,7 @@ export default async function Home() {
       <div className="brands-and-aboutus bg-accent">
         <div className="wrapper">
           {/* Brands  */}
-          <Brands />
+          <Brands data={data?.brand?.data}/>
           {/* About US  */}
           <AboutUs />
         </div>

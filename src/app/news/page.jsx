@@ -1,3 +1,4 @@
+export const revalidate = 0;
 import Blogs from "@/components/Home/Blogs";
 import ReUseableBanner from "@/components/Reuseable/ReUseableBanner";
 import MasterLayout from "@/layout/MasterLayout";
@@ -20,6 +21,20 @@ async function getData(id) {
   } catch (error) {
     console.log(error);
   }
+}
+
+export async function generateMetadata(props) {
+  let id = await props.searchParams["id"];
+  const { singleData } = await getData(id);
+  return {
+    title: "News & Articles",
+    description: singleData?.description,
+    openGraph: {
+      title: singleData?.title,
+      images: [singleData?.img],
+      description: singleData?.description,
+    },
+  };
 }
 
 const page = async (props) => {

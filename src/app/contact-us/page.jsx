@@ -3,6 +3,14 @@ import Map from "@/components/ContactUs/Map";
 import ReUseableBanner from "@/components/Reuseable/ReUseableBanner";
 import MasterLayout from "@/layout/MasterLayout";
 import React from "react";
+
+export const metadata = {
+  title: "Struggle | Contact US",
+  description: "Quality Textiles And Apparel With Efficiency & Sustainability",
+};
+
+
+
 async function getData() {
   try {
     const contactUs = await (

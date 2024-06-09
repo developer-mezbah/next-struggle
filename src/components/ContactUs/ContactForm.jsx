@@ -11,12 +11,58 @@ import {
 } from "react-icons/fa6";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { SiAmazonsimpleemailservice } from "react-icons/si";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
-const ContactForm = ({data}) => {
+const ContactForm = ({ data }) => {
   const [currentDomain, setCurrentDomain] = useState("");
   useEffect(() => {
     setCurrentDomain(window.location.origin);
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const subject = e.target.subject.value;
+    const phone = e.target.phone.value;
+    const message = e.target.message.value;
+    // console.log({name, email, subject, phone, message});
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          sendername: name,
+          to: process.env.NEXT_PUBLIC_EMAILJS_TO_EMAIL,
+          subject,
+          message,
+          phone,
+          email: email,
+        },
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        (response) => {
+          if (response.status == 200) {
+            toast.success("Email send Successfull.");
+            e.target.reset();
+          }
+          // console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );
+  };
+
+  const labelClass =
+    "absolute left-0 -top-6 text-accent peer-placeholder-shown:text-[22px] peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-1 transition-all peer-focus:-top-4 peer-focus:text-gray-600 peer-focus:text-sm leading-[33px] text-sm";
+  const inputClass =
+    "peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600";
   return (
     <div className="pb-10">
       <div className="wrapper">
@@ -72,7 +118,7 @@ const ContactForm = ({data}) => {
             </div>
           </div>
           <div data-aos="fade-left" className="w-full">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="relative">
                 <div className="mx-auto">
                   <div className="py-8 text-base leading-6 text-gray-700 sm:text-lg sm:leading-7 flex items-center justify-center gap-5">
@@ -81,14 +127,14 @@ const ContactForm = ({data}) => {
                         id="name"
                         name="name"
                         type="text"
-                        className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                        className={inputClass}
                         placeholder="Username"
                       />
                       <label
                         data-aos="fade-up"
                         data-aos-duration="500"
                         htmlFor="name"
-                        className="absolute left-0 -top-6 text-accent peer-placeholder-shown:text-[22px] peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-1 transition-all peer-focus:-top-4 peer-focus:text-gray-600 peer-focus:text-sm leading-[33px] text-sm"
+                        className={labelClass}
                       >
                         Name
                       </label>
@@ -98,14 +144,14 @@ const ContactForm = ({data}) => {
                         id="email"
                         name="email"
                         type="email"
-                        className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                        className={inputClass}
                         placeholder="Email address"
                       />
                       <label
                         data-aos="fade-up"
                         data-aos-duration="500"
                         htmlFor="email"
-                        className="absolute left-0 -top-3.5 text-accent peer-placeholder-shown:text-[22px] peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-1 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm leading-[33px]"
+                        className={labelClass}
                       >
                         Email
                       </label>
@@ -117,14 +163,14 @@ const ContactForm = ({data}) => {
                         id="Subject"
                         name="subject"
                         type="text"
-                        className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                        className={inputClass}
                         placeholder="Subject"
                       />
                       <label
                         data-aos="fade-up"
                         data-aos-duration="500"
                         htmlFor="Subject"
-                        className="absolute left-0 -top-3.5 text-accent peer-placeholder-shown:text-[22px] peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-1 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm leading-[33px]"
+                        className={labelClass}
                       >
                         Subject
                       </label>
@@ -134,14 +180,14 @@ const ContactForm = ({data}) => {
                         id="Phone"
                         name="phone"
                         type="number"
-                        className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
+                        className={inputClass}
                         placeholder="Phone"
                       />
                       <label
                         data-aos="fade-up"
                         data-aos-duration="500"
                         htmlFor="Phone"
-                        className="absolute left-0 -top-6 text-accent peer-placeholder-shown:text-[22px] peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-1 transition-all peer-focus:-top-4 peer-focus:text-gray-600 peer-focus:text-sm leading-[33px] text-sm"
+                        className={labelClass}
                       >
                         Phone
                       </label>
@@ -155,7 +201,7 @@ const ContactForm = ({data}) => {
                     <div className="relative w-full">
                       <textarea
                         id="Intrested"
-                        name="intrested"
+                        name="message"
                         type="text"
                         rows={5}
                         className="peer placeholder-transparent w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600"
@@ -165,7 +211,7 @@ const ContactForm = ({data}) => {
                         data-aos="fade-up"
                         data-aos-duration="500"
                         htmlFor="Intrested"
-                        className="absolute left-0 -top-6 text-accent peer-placeholder-shown:text-[22px] peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-1 transition-all peer-focus:-top-4 peer-focus:text-gray-600 peer-focus:text-sm leading-[33px] text-sm"
+                        className={labelClass}
                       >
                         Hello Iam Intrested in..
                       </label>
