@@ -63,7 +63,7 @@ const GoogleTranslate = () => {
           position: "absolute",
           left: "0%",
           top: "0%",
-          zIndex: -99999,
+          zIndex: 99999999999999999999,
         }}
       ></div>
       <SelectPicker
