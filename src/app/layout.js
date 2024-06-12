@@ -3,6 +3,7 @@ import "aos/dist/aos.css";
 import AosHook from "@/utils/AosHook";
 import AdminContextProvider from "@/Context/AdminContext";
 import { Toaster } from "react-hot-toast";
+import Link from "next/link";
 
 export const metadata = {
   title: "Struggle | Home",
@@ -35,10 +36,7 @@ export default async function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
         />
-        <link
-          rel="icon" type="image/x-icon"
-          href="/favicon/favicon.ico"
-        />
+        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
       <body>

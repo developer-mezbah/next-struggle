@@ -6,8 +6,9 @@ import { FcAbout } from "react-icons/fc";
 import { GoProjectSymlink } from "react-icons/go";
 import { MdOutlineContactPhone, MdPrecisionManufacturing } from "react-icons/md";
 import { FaNewspaper, FaPersonArrowDownToLine, FaRegNewspaper } from "react-icons/fa6";
-import { GrLicense } from "react-icons/gr";
+import { GrGallery, GrLicense } from "react-icons/gr";
 import { GiSwordBrandish } from "react-icons/gi";
+import { AiFillAlert } from "react-icons/ai";
 
 export const DasNavData = [
   {
@@ -18,29 +19,6 @@ export const DasNavData = [
       {
         name: "Home",
         url: "/dashboard",
-      },
-    ],
-  },
-  {
-    pageName: "pages",
-    pageTitle: "Home",
-    icon: <FaHome />,
-    subItems: [
-      {
-        name: "Banner",
-        url: "/dashboard/home/banner",
-      },
-      {
-        name: "Forms",
-        url: "/dashboard/home-page",
-      },
-      {
-        name: "not-found",
-        url: "/dashboard/not-found",
-      },
-      {
-        name: "Table",
-        url: "/dashboard/table",
       },
     ],
   },
@@ -172,6 +150,36 @@ export const DasNavData = [
       {
         name: "Create & Delete",
         url: "/dashboard/brands",
+      },
+    ],
+  },
+  {
+    pageName: "All Images",
+    pageTitle: "Gallery",
+    icon: <GrGallery />,
+    subItems: [
+      {
+        name: "Image Delete",
+        url: "/dashboard/gallery",
+      },
+    ],
+  },
+  {
+    pageName: "pages",
+    pageTitle: "Sustainability",
+    icon: <AiFillAlert />,
+    subItems: [
+      {
+        name: "Hero section",
+        url: "/dashboard/sustainability/hero",
+      },
+      {
+        name: "Create Blog",
+        url: "/dashboard/sustainability/create-blog",
+      },
+      {
+        name: "All blogs",
+        url: "/dashboard/sustainability/all-blogs",
       },
     ],
   },

@@ -1,0 +1,32 @@
+.gallery-images {
+  columns: 5;
+  column-gap: 10px;
+}
+.gallery-images .box {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.gallery-images .box img {
+  width: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .gallery-images {
+    column-gap: 5px;
+  }
+  .gallery-images .box {
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  .gallery-images {
+    columns: 3;
+  }
+}
+@media (max-width: 450px) {
+  .gallery-images {
+    columns: 2;
+  }
+}

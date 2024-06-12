@@ -270,10 +270,10 @@ export default function NotFound() {
               The stuff you were looking for doesnt exist
             </p>
             <Link
-              href="/dashboard"
+              href="/"
               className="bg-transparent hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
             >
-              Go Dashboard
+              Go Home
             </Link>
           </div>
         </div>

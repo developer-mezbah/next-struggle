@@ -41,8 +41,6 @@ const UpdateReviewForm = ({ data, setShowUpdateForm }) => {
       twitter,
       linkedin,
       instagram,
-      imgData,
-      brandImgData,
     };
 
     if (img.name !== "" || brandImg.name !== "") {
@@ -58,14 +56,14 @@ const UpdateReviewForm = ({ data, setShowUpdateForm }) => {
           {
             ...sendData,
             brandImg:
-              brandImg.name !== "" ? resbrandImg?.data?.url : data?.brandImg,
+            resbrandImg !== "" ? resbrandImg?.data?.url : data?.brandImg,
             deleteBrandImg:
-              brandImg.name !== ""
+            resbrandImg !== ""
                 ? resbrandImg?.data?.delete_url
                 : data?.deleteBrandImg,
-            img: img.name !== "" ? resImg?.data?.url : data?.img,
+            img: resImg !== "" ? resImg?.data?.url : data?.img,
             deleteImg:
-              img.name !== "" ? resImg?.data?.delete_url : data?.deleteImg,
+            resImg !== "" ? resImg?.data?.delete_url : data?.deleteImg,
           }
         );
         if (res.status) {

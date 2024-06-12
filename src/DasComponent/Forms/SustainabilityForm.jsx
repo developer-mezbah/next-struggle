@@ -9,7 +9,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import ImageUpload from "../Others/ImageUpload";
 
-const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
+const SustainabilityForm = ({ setShowUpdateForm, updateFormData }) => {
   const [loader, setLoader] = useState(false);
   const [file, setFile] = useState(updateFormData?.img || "");
   const router = useRouter();
@@ -36,10 +36,9 @@ const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
       client_api
         .upload_image(data)
         .then((result) => {
-          // console.log(result);
           if (result.success) {
             client_api
-              .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`, {
+              .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability`, {
                 title: title,
                 subTitle: subTitle,
                 img: result.data.url,
@@ -48,7 +47,7 @@ const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
               .then((backenddata) => {
                 if (backenddata) {
                   toast.success("Data added.");
-                  router.push("/dashboard/about-us/all-blogs");
+                  router.push("/dashboard/sustainability/all-blogs");
                   router.refresh();
                 }
                 setLoader(false);
@@ -62,7 +61,7 @@ const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
       if (img.name === "") {
         client_api
           .update(
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us?id=${updateFormData?._id}`,
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability?id=${updateFormData?._id}`,
             { title, subTitle }
           )
           .then((result) => {
@@ -77,7 +76,7 @@ const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
           if (result.success) {
             client_api
               .update(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us?id=${updateFormData?._id}`,
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability?id=${updateFormData?._id}`,
                 {
                   title: title,
                   subTitle: subTitle,
@@ -100,7 +99,7 @@ const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
   return (
     <div className="dashboard-form-bg flex flex-col">
       <div className="flex items-center justify-between">
-        <FormTitle text={"Create About Hero"} />
+        <FormTitle text={"Create"} />
 
         {updateFormData && (
           <div
@@ -154,4 +153,4 @@ const AboutUsForm = ({ setShowUpdateForm, updateFormData }) => {
   );
 };
 
-export default AboutUsForm;
+export default SustainabilityForm;

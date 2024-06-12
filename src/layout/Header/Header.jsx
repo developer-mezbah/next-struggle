@@ -1,16 +1,18 @@
 "use client";
+import { AdminContext } from "@/Context/AdminContext";
+import GoogleTranslate from "@/utils/Translate";
 import Image from "next/image";
-import "./Header.css";
-import React, { useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useRef, useState } from "react";
 import { GoGlobe } from "react-icons/go";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
-import { usePathname } from "next/navigation";
-import { AdminContext } from "@/Context/AdminContext";
+import "./Header.css";
+// import Translate from "./Translate";
 
 const Header = () => {
-  const {user} = useContext(AdminContext)
+  const { user } = useContext(AdminContext);
   const path = usePathname();
   const [translate, setTranslate] = useState(false);
   const [navbar, setNavbar] = useState(false);
@@ -128,7 +130,14 @@ const Header = () => {
                     </Link>
                   </li>
                 ))}
-                {user && <Link className="text-[#ffffff]" href={"https://info@strugglestyle.net"}>Mail</Link>}
+                {user && (
+                  <Link
+                    className="text-[#ffffff]"
+                    href={"https://info@strugglestyle.net"}
+                  >
+                    Mail
+                  </Link>
+                )}
               </ul>
             </div>
             <div className="flex gap-3 items-center">
@@ -139,21 +148,27 @@ const Header = () => {
                 >
                   <GoGlobe />
                 </div>
-                {translate && (
-                  <div
-                    ref={popupRef}
-                    className="absolute bg-accent text-[#ffffff] p-5 rounded-lg mt-2"
-                  >
-                    <ul className="translate space-y-2 cursor-pointer">
+
+                {/* {translate && ( */}
+                <div
+                  ref={popupRef}
+                  className={`absolute bg-transparent text-[#ffffff] p-5 rounded-lg mt-2 ${
+                    translate ? "blog" : "hidden"
+                  }`}
+                >
+                  {/* <ul className="bg-accent rounded-md py-5 px-8 translate space-y-2 cursor-pointer">
                       <li>German</li>
                       <li>French</li>
                       <li>Turkis</li>
                       <li>Spanish</li>
                       <li>Russia </li>
-                    </ul>
-                  </div>
-                )}
+                    </ul> */}
+
+                  <GoogleTranslate />
+                </div>
+                {/* )} */}
               </div>
+
               <div
                 onClick={() => {
                   setNavbar(!navbar);

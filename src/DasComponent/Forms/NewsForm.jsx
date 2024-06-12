@@ -85,6 +85,7 @@ const NewsForm = ({ updateFormData, setShowUpdateForm }) => {
                   description: description,
                   category: category,
                   img: result.data.url,
+                  deleteImg: result.data.delete_url,
                 }
               )
               .then((backenddata) => {

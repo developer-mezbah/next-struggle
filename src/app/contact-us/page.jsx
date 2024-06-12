@@ -27,9 +27,9 @@ const page = async () => {
   const contactUs = await getData();
   return (
     <MasterLayout>
-      <ReUseableBanner title="Contact Us" img="/images/bg_banner2.png" />
+      <div><ReUseableBanner title="Contact Us" img="/images/bg_banner2.png" />
       <ContactForm data={contactUs?.data}/>
-      <Map />
+      <Map /></div>
     </MasterLayout>
   );
 };

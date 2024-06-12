@@ -7,7 +7,7 @@ import ImageUpload from "../Others/ImageUpload";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import client_api from "@/Helper/api_fetch";
 
-const AboutHero = ({ data }) => {
+const SustainabilityHero = ({ data }) => {
   const [loader, setLoader] = useState(false);
   const [file, setFile] = useState();
   const handleSubmit = (e) => {
@@ -16,9 +16,11 @@ const AboutHero = ({ data }) => {
     const form = new FormData(e.target);
 
     const title = form.get("title");
+    const description = form.get("description");
     const img = form.get("img");
     const imgData = new FormData();
     imgData.append("image", img);
+
     if (img.name === "") {
       if (!data) {
         setLoader(false);
@@ -29,8 +31,8 @@ const AboutHero = ({ data }) => {
       if (img.name === "") {
         client_api
           .update(
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero?id=${data?._id}`,
-            { title }
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability/hero?id=${data?._id}`,
+            { title, description }
           )
           .then((result) => {
             if (result) {
@@ -43,9 +45,10 @@ const AboutHero = ({ data }) => {
           if (result.success) {
             client_api
               .update(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero?id=${data?._id}`,
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability/hero?id=${data?._id}`,
                 {
                   title: title,
+                  description: description,
                   img: result.data.url,
                   imgDeleteUrl: result.data.delete_url,
                 }
@@ -63,8 +66,9 @@ const AboutHero = ({ data }) => {
       client_api.upload_image(imgData).then((result) => {
         if (result.success) {
           client_api
-            .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero`, {
+            .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability/hero`, {
               title: title,
+              description: description,
               img: result.data.url,
               imgDeleteUrl: result.data.delete_url,
             })
@@ -81,7 +85,7 @@ const AboutHero = ({ data }) => {
   return (
     <div className="dashboard-form-bg flex flex-col">
       <div className="flex items-center justify-between">
-        <FormTitle text={"Create About Hero"} />
+        <FormTitle text={"Create & Update"} />
       </div>
       <form onSubmit={handleSubmit} className="das-form">
         <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -103,6 +107,23 @@ const AboutHero = ({ data }) => {
 
           <ImageUpload file={file || data?.img} setFile={setFile} />
         </div>
+        <div className="grid gap-6 mb-6 grid-cols-1">
+          <div>
+            <label htmlFor="description" className="das-label">
+              Description
+            </label>
+            <textarea
+              type="text"
+              id="description"
+              className="das-input"
+              placeholder="Write description"
+              name="description"
+              rows={4}
+              defaultValue={data?.description}
+              required
+            />
+          </div>
+        </div>
 
         <SubmitButton text={"Submit"} submit={loader} />
       </form>
@@ -110,4 +131,4 @@ const AboutHero = ({ data }) => {
   );
 };
 
-export default AboutHero;
+export default SustainabilityHero;

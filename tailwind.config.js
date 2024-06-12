@@ -20,9 +20,9 @@ module.exports = {
         warning: "#F5B849",
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          'gradient-45': 'linear-gradient(45deg, #1d1d1d 2%, #002025 100%)',
       },
     },
   },
