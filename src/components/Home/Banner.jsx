@@ -57,7 +57,7 @@ const Banner = () => {
             autoPlay
           >
             <source
-              src="https://res.cloudinary.com/dmiz7yey9/video/upload/v1716107645/Video/Worlds_top_Green_garment_factories_in_Bangladesh_ubhsfw.mp4"
+              src="https://res.cloudinary.com/dl63ay6nm/video/upload/v1718217438/website%20video/jb9sgulzdxg4hgyirwhm.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.

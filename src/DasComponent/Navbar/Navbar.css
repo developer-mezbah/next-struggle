@@ -124,7 +124,7 @@
 }
 
 /* Handle on hover */
-.dasboard-navbar-scrollbar::-webkit-scrollbar-thumb:hover {
+.dasboard-navbar-scrollbar::-webkit-scrollbar-thumb {
   background: #767E92;
   border-radius: 10px;
 }

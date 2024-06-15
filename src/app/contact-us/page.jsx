@@ -9,8 +9,6 @@ export const metadata = {
   description: "Quality Textiles And Apparel With Efficiency & Sustainability",
 };
 
-
-
 async function getData() {
   try {
     const contactUs = await (
@@ -27,9 +25,11 @@ const page = async () => {
   const contactUs = await getData();
   return (
     <MasterLayout>
-      <div><ReUseableBanner title="Contact Us" img="/images/bg_banner2.png" />
-      <ContactForm data={contactUs?.data}/>
-      <Map /></div>
+      <div>
+        <ReUseableBanner title="Contact Us" img="/images/bg_banner2.png" />
+        <ContactForm data={contactUs?.data} />
+        <Map />
+      </div>
     </MasterLayout>
   );
 };

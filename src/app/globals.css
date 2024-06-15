@@ -121,6 +121,9 @@ body{
 .skiptranslate .goog-te-gadget-simple span a span:last-child{
   color:  green !important;
 }
+#google_translate_element{
+  left: -200px !important;
+}
 .goog-te-gadget-icon{
   /* scale: 1.5; */
 }

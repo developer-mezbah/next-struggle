@@ -2,16 +2,13 @@
 import React, { useState } from "react";
 import SubmitButton from "../Others/SubmitButton";
 import FormTitle from "../Others/FormTitle";
-import Image from "next/image";
 import toast from "react-hot-toast";
 import client_api from "@/Helper/api_fetch";
-import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import ImageUpload from "../Others/ImageUpload";
 
-const ManufacturingForm = ({ updateFormData }) => {
+const LinkAndInt = ({ updateFormData }) => {
   const [loader, setLoader] = useState(false);
-  const [isRoleHero, setRoleHero] = useState(true);
   const [file, setFile] = useState("");
   const router = useRouter();
 
@@ -21,10 +18,12 @@ const ManufacturingForm = ({ updateFormData }) => {
     const form = new FormData(e.target);
 
     const title = form.get("title");
-    const description = form.get("description");
+    const subtitleTop = form.get("subtitleTop");
+    const subtitleBottom = form.get("subtitleBottom");
     const img = form.get("img");
     const data = new FormData();
     data.append("image", img);
+
     if (img.name === "") {
       if (!updateFormData) {
         setLoader(false);
@@ -39,9 +38,10 @@ const ManufacturingForm = ({ updateFormData }) => {
           // console.log(result);
           if (result.success) {
             client_api
-              .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing`, {
+              .create(`${process.env.NEXT_PUBLIC_SERVER_URL}/lingerie`, {
                 title: title,
-                description: description,
+                subtitleTop,
+                subtitleBottom,
                 img: result.data.url,
                 imgDeleteUrl: result.data.delete_url,
               })
@@ -61,8 +61,8 @@ const ManufacturingForm = ({ updateFormData }) => {
       if (img.name === "") {
         client_api
           .update(
-            `${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing?id=${updateFormData?._id}`,
-            { title, description }
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/lingerie?id=${updateFormData?._id}`,
+            { title, subtitleTop, subtitleBottom }
           )
           .then((result) => {
             if (result) {
@@ -75,10 +75,11 @@ const ManufacturingForm = ({ updateFormData }) => {
           if (result.success) {
             client_api
               .update(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing?id=${updateFormData?._id}`,
+                `${process.env.NEXT_PUBLIC_SERVER_URL}/lingerie?id=${updateFormData?._id}`,
                 {
                   title: title,
-                  description: description,
+                  subtitleTop,
+                  subtitleBottom,
                   img: result.data.url,
                   imgDeleteUrl: result.data.delete_url,
                 }
@@ -98,7 +99,7 @@ const ManufacturingForm = ({ updateFormData }) => {
     <div>
       <div className="dashboard-form-bg flex flex-col">
         <div className="flex items-center justify-between">
-          <FormTitle text={"Manufacturing"} />
+          <FormTitle text={"Lingerie"} />
         </div>
         <form onSubmit={handleSubmit} className="das-form">
           <div className="grid gap-6 mb-6 md:grid-cols-2">
@@ -118,24 +119,37 @@ const ManufacturingForm = ({ updateFormData }) => {
               />
             </div>
             <div>
-              <label htmlFor="Description" className="das-label">
-                Description
+              <label htmlFor="subtitle-top" className="das-label">
+                Top Sub Title
               </label>
               <textarea
                 type="text"
-                id="Description"
+                id="subtitle-top"
                 className="das-input"
-                placeholder="Write Description"
-                name="description"
+                placeholder="Write top subtitle"
+                name="subtitleTop"
                 rows={4}
-                defaultValue={updateFormData?.description}
+                defaultValue={updateFormData?.subtitleTop}
                 required
               />
             </div>
-          </div>
-          <div className="grid gap-6 mb-6 md:grid-cols-2">
+            <div>
+              <label htmlFor="subtitle-bottom" className="das-label">
+                Bottom Sub Title
+              </label>
+              <textarea
+                type="text"
+                id="subtitle-bottom"
+                className="das-input"
+                placeholder="Write bottom subtitle"
+                name="subtitleBottom"
+                rows={4}
+                defaultValue={updateFormData?.subtitleBottom}
+                required
+              />
+            </div>
             {/* Image Upload Component  */}
-            <ImageUpload file={file || updateFormData?.img } setFile={setFile} />
+            <ImageUpload file={file || updateFormData?.img} setFile={setFile} />
           </div>
           <SubmitButton text={"Submit"} submit={loader} />
         </form>
@@ -144,4 +158,4 @@ const ManufacturingForm = ({ updateFormData }) => {
   );
 };
 
-export default ManufacturingForm;
+export default LinkAndInt;

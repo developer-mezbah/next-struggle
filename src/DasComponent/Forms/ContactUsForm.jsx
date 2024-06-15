@@ -14,10 +14,16 @@ const ContactUsForm = ({ data }) => {
     const firstEmail = form.firstEmail.value;
     const secondEmail = form.secondEmail.value;
     const number = form.number.value;
+    const locationOne = form.locationOne.value;
+    const locationTwo = form.locationTwo.value;
+    const locationThree = form.locationThree.value;
     const sendData = {
       firstEmail,
       secondEmail,
       number,
+      locationOne,
+      locationTwo,
+      locationThree
     };
     if (data) {
       client_api
@@ -86,9 +92,52 @@ const ContactUsForm = ({ data }) => {
             <input
               type="text"
               id="number"
+              name="number"
               className="das-input"
               placeholder="Write your number"
               defaultValue={data?.number}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="location-one" className="das-label">
+              Loacation One
+            </label>
+            <input
+              type="text"
+              id="location-one"
+              className="das-input"
+              placeholder="Write your location-one"
+              defaultValue={data?.locationOne}
+              name="locationOne"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="location-two" className="das-label">
+              Loacation Two
+            </label>
+            <input
+              type="text"
+              id="location-two"
+              className="das-input"
+              placeholder="Write your location-two"
+              defaultValue={data?.locationTwo}
+              name="locationTwo"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="location-three" className="das-label">
+              Loacation Three
+            </label>
+            <input
+              type="text"
+              id="location-three"
+              className="das-input"
+              placeholder="Write your location-three"
+              defaultValue={data?.locationThree}
+              name="locationThree"
             />
           </div>
         </div>

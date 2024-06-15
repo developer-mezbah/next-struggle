@@ -137,8 +137,16 @@ export const DasNavData = [
     icon: <MdPrecisionManufacturing/>,
     subItems: [
       {
-        name: "Create & Update",
-        url: "/dashboard/manufacturing",
+        name: "Hero",
+        url: "/dashboard/manufacturing/hero",
+      },
+      {
+        name: "Lingerie & Intimates",
+        url: "/dashboard/manufacturing/link-and-int",
+      },
+      {
+        name: "Basic Unit",
+        url: "/dashboard/manufacturing/basic-unit",
       },
     ],
   },
