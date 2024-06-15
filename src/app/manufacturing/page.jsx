@@ -14,15 +14,21 @@ export const metadata = {
 async function getData() {
   try {
     const data = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing`, {
+        cache: "no-store",
+      })
     ).json();
     const lingerie = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/lingerie`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/lingerie`, {
+        cache: "no-store",
+      })
     ).json();
     const basicUnit = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/basic-unit`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/basic-unit`, {
+        cache: "no-store",
+      })
     ).json();
-    return { data, lingerie,basicUnit };
+    return { data, lingerie, basicUnit };
   } catch (error) {
     console.log(error);
   }
@@ -30,7 +36,6 @@ async function getData() {
 
 const page = async () => {
   const data = await getData();
-  console.log(data);
   return (
     <MasterLayout>
       <div>
