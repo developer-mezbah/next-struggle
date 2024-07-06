@@ -27,23 +27,27 @@ async function getData() {
   }
 }
 
-
-
 const Footer = async () => {
   const data = await getData();
   return (
     <div className="md:mt-[350px] mt-[230px]">
       <div className="wrapper relative">
         <div className="mx-auto md:space-y-7 space-y-4 md:px-5 px-2 md:py-14 py-5 text-center rounded-3xl footer-banner absolute lg:left-[150px] lg:right-[150px] left-2 right-2 md:-mt-[250px] -mt-[150px]">
-          <h1 className="text-textLight font-bold lg:text-4xl text-2xl mt-5">
-            A Partnership With <br /> benefits and sustainability sustainability
-          </h1>
+          <i>
+            <h1 className="text-textLight font-bold lg:text-4xl text-2xl mt-5">
+            Make relationship <br /> with your promotional orders
+            </h1>
+          </i>
           <p className="text-[18px] text-textLight font-normal">
-            Jump on free quotes and start your new journey right away!
+            {/* Jump on free quotes and start your new journey right away! */}
+            Your passion our mission.
           </p>
-          <button className="mx-auto md:p-5 p-3 text-accent text-xl bg-primary gap-2 flex justify-center items-center rounded-xl hover:bg-green-500 delay-75">
-            Free Quotes <FaArrowAltCircleRight />
-          </button>
+          <Link
+            href="/contact-us"
+            className="mx-auto md:p-5 p-3 text-accent text-xl bg-primary gap-2 flex justify-center items-center rounded-xl hover:bg-green-500 delay-75 md:w-1/4 w-2/4"
+          >
+            Contact Us <FaArrowAltCircleRight />
+          </Link>
         </div>
       </div>
       <div className="bg-accent pt-[170px]">
@@ -52,15 +56,13 @@ const Footer = async () => {
           <div className="flex justify-between items-center flex-wrap space-y-10">
             <div>
               <Image
-                className="w-[112px]"
+                className="w-[112px] scale-110"
                 src="/images/logo.png"
                 width={400}
                 height={200}
                 alt="Footer logo"
               />
-              <p className="text-textLight md:w-[400px]">
-               {data?.data?.title}
-              </p>
+              <p className="text-textLight md:w-[400px]">{data?.data?.title}</p>
             </div>
             <div className="space-y-5">
               <div className="flex gap-3 items-center text-md text-textLight">
@@ -130,15 +132,17 @@ const Footer = async () => {
               </Link>
             </li>
             <li>
-              <LogoutBtn/>
+              <LogoutBtn />
             </li>
             <li>
-            <Link className="text-[16px]" href="/dashboard">
+              <Link className="text-[16px]" href="/dashboard">
                 Dashobard
               </Link>
             </li>
           </ul>
-          <p className="text-textLight">© 2024STRUGLE-STYLE - All Right Reserved</p>
+          <p className="text-textLight">
+            © 2024STRUGLE-STYLE - All Right Reserved
+          </p>
         </div>
       </div>
     </div>

@@ -109,7 +109,7 @@ const Header = () => {
           <div className="flex justify-between items-center">
             <Link href="/">
               <Image
-                className="w-[112px] h-[112px]"
+                className="w-[112px] h-[112px]  scale-125"
                 src="/images/logo.png"
                 width={400}
                 height={200}

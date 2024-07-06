@@ -94,7 +94,6 @@ const BrandsForm = ({ categories, data }) => {
                 if (result) {
                   router.refresh();
                   toast.success("Data deleted!");
-                  setLoader(true);
                 } else {
                   toast.error("Something went wrong!");
                 }

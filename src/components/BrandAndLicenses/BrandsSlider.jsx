@@ -38,12 +38,12 @@ const BrandsSlider = ({data}) => {
             >
               {data?.map((item) => (
                 <SwiperSlide key={item._id}>
-                  <div className="card border-0 mr-5 mt-2">
+                  <div className="card border-0 mr-5 mt-2 rounded-2xl h-[130px] overflow-hidden">
                     <Image
                       width={500}
                       height={500}
                       src={item.img}
-                      className="img-fluid me-5"
+                      className="img-fluid me-5 h-full object-scale-down"
                       alt=""
                     />
                   </div>

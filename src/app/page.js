@@ -1,3 +1,4 @@
+import CircularCarousel from "@/components/CircularCarousel/CircularCarousel";
 import AboutUs from "@/components/Home/AboutUs";
 import Banner from "@/components/Home/Banner";
 import Blogs from "@/components/Home/Blogs";
@@ -51,7 +52,8 @@ export default async function Home() {
       {/* Blogs */}
       <Blogs data={data?.newsData?.data.slice(0, 6)} />
       {/* Youtube Section  */}
-      <Youtube />
+      {/* <Youtube /> */}
+      <CircularCarousel/>
     </MasterLayout>
   );
 }

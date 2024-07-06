@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaPlayCircle } from "react-icons/fa";
 import { FaCirclePause } from "react-icons/fa6";
+import "./Banner.css";
 
 const Star = ({ className }) => {
   return (
@@ -33,7 +34,7 @@ const Banner = () => {
     //   video.muted = false;
     //   video.play();
     // };
-    // video.muted = false;
+    video.muted = false;
     btn.onclick = () => {
       if (video.paused) {
         video.play();
@@ -45,47 +46,48 @@ const Banner = () => {
     };
   }, []);
   return (
-    <div id="banner">
-      <div className="relative overflow-hidden">
-        <div className="h-[450px] md:h-[640px] w-full">
-          <video
-            id="banner-video"
-            className="md:scale-[200%] scale-[500%]"
-            width="100%"
-            height="100%"
-            loop
-            autoPlay
-          >
-            <source
-              src="https://res.cloudinary.com/dl63ay6nm/video/upload/v1718217438/website%20video/jb9sgulzdxg4hgyirwhm.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+    <div className="banner">
+      <video id="banner-video" className="background-video" autoPlay loop muted>
+        <source
+          src="https://res.cloudinary.com/dl63ay6nm/video/upload/v1720269893/website%20video/ybucdapqwwzu2pbbb9zd.mp4"
+          type="video/mp4"
+          loop
+          autoPlay
+          label="fullHD"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div>
         <div
           className="absolute top-0 left-0 right-0 bottom-0 text-center flex justify-center items-center flex-col z-50 pt-20"
           style={{ background: "rgb(6, 60, 1, 0.4)" }}
         >
           <div data-aos="flip-up">
-            <h1 className="lg:text-[70px] md:text-[45px] text-[25px] text-textLight font-bold capitalize lg:leading-[100px] md:leading-[70px] leading-[40px]">
-              Quality textiles and <br /> apparel with efficiency & <br />
-              <span className="text-primary">
-                <i>Sustainability</i>
-              </span>
+            <h1 className="lg:text-[70px] md:text-[45px] text-[25px] text-primary font-bold capitalize lg:leading-[100px] md:leading-[70px] leading-[40px]">
+              Struggle style inc.
             </h1>
+            <p className="text-[25px]">
+              Quality textiles and apparel with efficiency & Sustainability
+              <br />
+              <span className="text-primary">
+                <i>Your passion our mission</i>
+              </span>
+            </p>
           </div>
-          <div data-aos="flip-down" className="flex gap-5 items-center">
-            <Link href="/contact-us" className="btn1">
-              Contact Us
-            </Link>
-            <button
-              className=" text-5xl text-primary "
-              id="pause-btn"
-              style={{ zIndex: 9999999999 }}
-            >
-              {play ? <FaCirclePause /> : <FaPlayCircle />}
-            </button>
+          <div>
+            <p className="mt-14 mb-5">lets begin journey with you promotion</p>
+            <div data-aos="flip-down" className="flex gap-5 items-center justify-center">
+              <Link href="/contact-us" className="btn1">
+                Contact Us
+              </Link>
+              <button
+                className=" text-5xl text-primary "
+                id="pause-btn"
+                style={{ zIndex: 9999999999 }}
+              >
+                {play ? <FaCirclePause /> : <FaPlayCircle />}
+              </button>
+            </div>
           </div>
         </div>
         <div className="absolute top-[30%] right-[25%]">
