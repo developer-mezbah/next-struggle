@@ -2,39 +2,38 @@
 import React, { useState } from "react";
 import FancyCarousel from "react-fancy-circular-carousel";
 import "react-fancy-circular-carousel/FancyCarousel.css";
-import "./CircularCarousel.css"
+import "./CircularCarousel.css";
 
 const CircularCarousel = () => {
   const [focusElement, setFocusElement] = useState(0);
-  const images = [
-    "/images/logo.png",
-    "/images/flag.jpg",
-    "/images/avatar.jpg",
-    "/images/wepik.png",
-  ];
-
   const info = [
     {
-      name: "Dilhi",
-      subtitle:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop",
+      name: "Didarul Maksud",
+      title: "CEO",
+      phone: "+12675368321",
+      location: "",
+      email: "didar@strugglestyle.net",
+      img: "https://cdn.pixabay.com/photo/2023/01/28/20/23/ai-generated-7751688_640.jpg"
     },
     {
-      name: "cumilla",
-      subtitle:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop",
+      name: "Kamrul Hasan",
+      title: "Managing Director",
+      phone: "+14753198400",
+      location: "USA office",
+      email: "kamrul@strugglestyle.net",
+      img:"https://cdn.pixabay.com/photo/2016/01/25/19/48/man-1161337_640.jpg"
     },
     {
-      name: "bangladesh",
-      subtitle:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop",
-    },
-    {
-      name: "Kolkata",
-      subtitle:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop",
+      name: "Shakhawat Hossain",
+      title: "Managing Director",
+      phone: "+8801707936699",
+      location: "GA-130A Progati Sharani,Gulshan, Dhaka 1212",
+      email: "info@strugglestyle.net ",
+      img:"https://cdn.pixabay.com/photo/2016/11/22/21/42/woman-1850703_640.jpg"
     },
   ];
+  const images  = info.map(item => item.img);
+
   return (
     <div className="md:mt-[200px] mt-[100px] md:pb-20 pb-10">
       <div className="wrapper">
@@ -70,11 +69,27 @@ const CircularCarousel = () => {
           </div>
 
           <div className="flex flex-col justify-center lg:w-1/3">
-            <div className="bg-accent p-5 rounded-md border-2 border-primary">
-              <p className="text-primary text-md">{info[focusElement]?.name}</p>
-              <p className="text-white mt-2 text-sm">
-                {info[focusElement]?.subtitle}
-              </p>
+            <div className="bg-accent p-5 rounded-md border-2 border-primary flex flex-col text-white">
+              <div>
+                <span className="text-primary text-lg">Name:</span>{" "}
+                <span className="text-sm">{info[focusElement]?.name}</span>
+              </div>
+              <div>
+                <span className="text-primary text-lg">Title:</span>{" "}
+                <span className="text-sm">{info[focusElement]?.title}</span>
+              </div>
+              <div>
+                <span className="text-primary text-lg">Office Location:</span>{" "}
+                <span className="text-sm">{info[focusElement]?.location}</span>
+              </div>
+              <div>
+                <span className="text-primary text-lg">Phone Number:</span>{" "}
+                <span className="text-sm">{info[focusElement]?.phone}</span>
+              </div>
+              <div>
+                <span className="text-primary text-lg">Email:</span>{" "}
+                <span className="text-sm">{info[focusElement]?.email}</span>
+              </div>
             </div>
           </div>
         </div>
