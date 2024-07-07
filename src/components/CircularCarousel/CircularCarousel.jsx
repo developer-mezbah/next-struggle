@@ -13,7 +13,7 @@ const CircularCarousel = () => {
       phone: "+12675368321",
       location: "",
       email: "didar@strugglestyle.net",
-      img: "https://cdn.pixabay.com/photo/2023/01/28/20/23/ai-generated-7751688_640.jpg"
+      img: "/images/didar.jpg"
     },
     {
       name: "Kamrul Hasan",
@@ -21,7 +21,7 @@ const CircularCarousel = () => {
       phone: "+14753198400",
       location: "USA office",
       email: "kamrul@strugglestyle.net",
-      img:"https://cdn.pixabay.com/photo/2016/01/25/19/48/man-1161337_640.jpg"
+      img:"/images/kamrul.jpg"
     },
     {
       name: "Shakhawat Hossain",
@@ -29,7 +29,7 @@ const CircularCarousel = () => {
       phone: "+8801707936699",
       location: "GA-130A Progati Sharani,Gulshan, Dhaka 1212",
       email: "info@strugglestyle.net ",
-      img:"https://cdn.pixabay.com/photo/2016/11/22/21/42/woman-1850703_640.jpg"
+      img:"/images/shakhawat.jpg"
     },
   ];
   const images  = info.map(item => item.img);
