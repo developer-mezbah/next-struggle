@@ -67,18 +67,18 @@ const Banner = () => {
         >
           <div data-aos="flip-up">
             <h1 className="lg:text-[70px] md:text-[45px] text-[25px] text-primary font-bold capitalize lg:leading-[100px] md:leading-[70px] leading-[40px]">
-              Struggle style inc.
+              Struggle <span className="lg:text-[50px] md:text-[30px] text-[17px]">style inc.</span>
             </h1>
             <p className="text-[25px]">
               Quality textiles and apparel with efficiency & Sustainability
               <br />
               <span className="text-primary">
-                <i>Your passion our mission</i>
+                <i>Your passion our mission.</i>
               </span>
             </p>
           </div>
           <div>
-            <p className="mt-14 mb-5">lets begin journey with you promotion</p>
+            <p className="mt-14 mb-5">lets begin journey with your promotion</p>
             <div data-aos="flip-down" className="flex gap-5 items-center justify-center">
               <Link href="/contact-us" className="btn1">
                 Contact Us

@@ -13,7 +13,7 @@ const CircularCarousel = () => {
       phone: "+12675368321",
       location: "",
       email: "didar@strugglestyle.net",
-      img: "/images/didar.jpg"
+      img: "/images/didar.jpg",
     },
     {
       name: "Kamrul Hasan",
@@ -21,7 +21,7 @@ const CircularCarousel = () => {
       phone: "+14753198400",
       location: "USA office",
       email: "kamrul@strugglestyle.net",
-      img:"/images/kamrul.jpg"
+      img: "/images/kamrul.jpg",
     },
     {
       name: "Shakhawat Hossain",
@@ -29,10 +29,10 @@ const CircularCarousel = () => {
       phone: "+8801707936699",
       location: "GA-130A Progati Sharani,Gulshan, Dhaka 1212",
       email: "info@strugglestyle.net ",
-      img:"/images/shakhawat.jpg"
+      img: "/images/shakhawat.jpg",
     },
   ];
-  const images  = info.map(item => item.img);
+  const images = info.map((item) => item.img);
 
   return (
     <div className="md:mt-[200px] mt-[100px] md:pb-20 pb-10">
@@ -71,24 +71,29 @@ const CircularCarousel = () => {
           <div className="flex flex-col justify-center lg:w-1/3">
             <div className="bg-accent p-5 rounded-md border-2 border-primary flex flex-col text-white">
               <div>
-                <span className="text-primary text-lg">Name:</span>{" "}
-                <span className="text-sm">{info[focusElement]?.name}</span>
+                <span className="text-primary text-lg">
+                  {info[focusElement]?.name}
+                </span>{" "}
               </div>
               <div>
-                <span className="text-primary text-lg">Title:</span>{" "}
-                <span className="text-sm">{info[focusElement]?.title}</span>
+                <span className="text-primary text-lg">
+                  {info[focusElement]?.title}
+                </span>{" "}
               </div>
               <div>
-                <span className="text-primary text-lg">Office Location:</span>{" "}
-                <span className="text-sm">{info[focusElement]?.location}</span>
+                <span className="text-primary text-lg">
+                  {info[focusElement]?.location}
+                </span>{" "}
               </div>
               <div>
-                <span className="text-primary text-lg">Phone Number:</span>{" "}
-                <span className="text-sm">{info[focusElement]?.phone}</span>
+                <span className="text-primary text-lg">
+                  {info[focusElement]?.phone}
+                </span>{" "}
               </div>
               <div>
-                <span className="text-primary text-lg">Email:</span>{" "}
-                <span className="text-sm">{info[focusElement]?.email}</span>
+                <span className="text-primary text-lg">
+                  {info[focusElement]?.email}
+                </span>{" "}
               </div>
             </div>
           </div>

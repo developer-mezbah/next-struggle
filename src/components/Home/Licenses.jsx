@@ -47,6 +47,10 @@ const Licenses = () => {
       _id: 11,
       img: "/images/license/img11.png",
     },
+    {
+      _id: 12,
+      img: "/images/license/img12.png",
+    },
   ];
   return (
     <div className=" bg-accent py-20 mt-10 overflow-hidden">
@@ -54,7 +58,7 @@ const Licenses = () => {
       // data-aos="zoom-out-down"
       >
         <div className="wrapper py-5">
-          <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3">
+          <div className="grid lg:grid-cols-6 md:grid-cols-4 grid-cols-3 gap-5 items-center">
             {data?.map((item) => (
               <Image
                 key={item?._id}
