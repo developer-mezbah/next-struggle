@@ -51,7 +51,7 @@ const SustainBlogs = ({ blogs, heroData }) => {
               }}
             >
               <div className="wrapper">
-                <div className="md:flex justify-between items-center gap-10">
+                <div className="md:flex justify-between items-center gap-10 pb-10">
                   <div
                     data-aos={`fade-${index & (2 === 0) ? "right" : "left"}`}
                     className="w-full space-y-5  md:py-20 py-10 md:space-y-10"

@@ -21,12 +21,12 @@ const MyProfile = () => {
     <div>
       <PageTitle text={"Profile Information"} />
       <div>
-        <div className=" mx-[30px] mt-[40px]">
-          <div className="grid grid-cols-12 gap-[30px]">
+        <div className="md:mx-[30px] mx-1 md:mt-[40px]">
+          <div className="grid lg:grid-cols-12 md:grid-cols-8 gap-[30px]">
             <div className="col-span-6">
               <form
                 onSubmit={handleSubmit}
-                className="rounded-xl  dashboard-form-bg p-[30px]"
+                className="rounded-xl  dashboard-form-bg md:p-[30px] p-3"
               >
                 <div
                   className="react-tabs__tab-panel react-tabs__tab-panel--selected"

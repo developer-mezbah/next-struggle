@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaPlayCircle } from "react-icons/fa";
 import { FaCirclePause } from "react-icons/fa6";
 import "./Banner.css";
@@ -26,15 +26,14 @@ const Star = ({ className }) => {
 };
 
 const Banner = () => {
-  const [play, setPlay] = useState(true);
+  const [play, setPlay] = useState(false);
+  const ref = useRef(null)
   useEffect(() => {
-    let video = document.getElementById("banner-video");
+    const video = document.getElementById("banner-video");
     const btn = document.getElementById("pause-btn");
-    // window.onload = function () {
-    //   video.muted = false;
-    //   video.play();
-    // };
-    video.muted = false;
+    
+    // video.muted = false;
+
     btn.onclick = () => {
       if (video.paused) {
         video.play();
@@ -44,15 +43,17 @@ const Banner = () => {
         setPlay(false);
       }
     };
-  }, []);
+
+    window.onload = function () {
+      video.play();
+    };
+  }, [ref]);
   return (
     <div className="banner">
-      <video id="banner-video" className="background-video" autoPlay loop muted>
+      <video ref={ref} id="banner-video" className="background-video" loop>
         <source
           src="https://res.cloudinary.com/dl63ay6nm/video/upload/v1720269893/website%20video/ybucdapqwwzu2pbbb9zd.mp4"
           type="video/mp4"
-          loop
-          autoPlay
           label="fullHD"
         />
         Your browser does not support the video tag.
