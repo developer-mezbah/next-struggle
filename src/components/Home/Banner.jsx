@@ -31,9 +31,11 @@ const Banner = () => {
   useEffect(() => {
     const video = document.getElementById("banner-video");
     const btn = document.getElementById("pause-btn");
-    
-    // video.muted = false;
-
+    if (video.paused) {
+      setPlay(true);
+    } else {
+      setPlay(false);
+    }
     btn.onclick = () => {
       if (video.paused) {
         video.play();
@@ -50,7 +52,7 @@ const Banner = () => {
   }, [ref]);
   return (
     <div className="banner">
-      <video ref={ref} id="banner-video" className="background-video" loop>
+      <video  ref={ref} id="banner-video" className="background-video" loop autoPlay>
         <source
           src="https://res.cloudinary.com/dl63ay6nm/video/upload/v1720269893/website%20video/ybucdapqwwzu2pbbb9zd.mp4"
           type="video/mp4"

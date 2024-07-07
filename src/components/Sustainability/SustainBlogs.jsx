@@ -38,7 +38,7 @@ const SustainBlogs = ({ blogs, heroData }) => {
           return (
             <div
               key={item?._id}
-              className={`md:pt-20}`}
+              // className={`md:pt-20}`}
               style={{
                 background:
                   index === 0
@@ -71,7 +71,7 @@ const SustainBlogs = ({ blogs, heroData }) => {
                     className="lg:w-4/6 w-full"
                   >
                     <Image
-                      className="w-full"
+                      className="w-full pt-10"
                       src={item?.img}
                       width={400}
                       height={400}
