@@ -5,8 +5,8 @@ import React from "react";
 const AboutUs = () => {
 
   return (
-    <div className="flex md:flex-row flex-col-reverse justify-center items-center lg:gap-20 gap-10 my-10 py-10">
-      <div className="w-full md:pt-0 pt-5 flex flex-col gap-5" data-aos="fade-right">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center items-center gap-10 my-10 py-10">
+      <div className="w-full md:pt-0 pt-5 flex flex-col gap-5" data-aos="fade-left">
         <Image
           className="h-[250px] w-full object-cover"
           src="/images/about-us-1.png"
@@ -14,18 +14,13 @@ const AboutUs = () => {
           height={600}
           alt=""
         />
-        <Image
-          className="h-[250px] w-full object-cover"
-          src="/images/about-us2.png"
-          width={600}
-          height={600}
-          alt=""
-        />
-      </div>
-      <div className="w-full space-y-6" data-aos="fade-left">
+        
         <button className="bg-primary font-semibold px-10 py-3 text-2xl">
           Main Manufacturing
         </button>
+        
+      </div>
+      <div className="w-full space-y-6" data-aos="fade-up">
         <h2 className="text-textLight font-medium md:text-[55px] text-[35px] md:leading-[80px] leading-[50px] ">
           our factory.
         </h2>
@@ -35,7 +30,17 @@ const AboutUs = () => {
           satisfaction, cherish the relationship with our stakeholders and
           commit to a safe greener environemnt .
         </p>
-        <button className="btn1">
+    
+      </div>
+      <div className="w-full text-center"  data-aos="fade-right">
+        <Image
+          className="h-[250px] w-full object-cover"
+          src="/images/about-us2.png"
+          width={600}
+          height={600}
+          alt=""
+        />
+      <button className="btn1 mt-5">
           special manufacturing
         </button>
       </div>
