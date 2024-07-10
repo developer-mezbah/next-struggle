@@ -69,7 +69,7 @@ const CircularCarousel = () => {
           </div>
 
           <div className="flex flex-col justify-center lg:w-1/3">
-            <div className="bg-accent p-5 rounded-md border-2 border-primary flex flex-col text-white">
+            <div className="bg-accent p-5 rounded-md border-2 border-primary flex flex-col text-white text-center space-y-2">
               <div>
                 <span className="text-primary text-lg">
                   {info[focusElement]?.name}

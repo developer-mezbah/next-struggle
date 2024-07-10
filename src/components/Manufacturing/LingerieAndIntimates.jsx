@@ -3,7 +3,7 @@ import React from "react";
 
 const LingerieAndIntimates = ({ data }) => {
   return (
-    <div className="bg-black py-20 space-y-5">
+    <div className="bg-[#111204] py-20 space-y-5">
       <div className="wrapper">
         <h1 className="text-center md:text-[50px] text-[30px] md:leading-[60px] leading-[40px] font-semibold overflow-hidden">
           <span className="text-white bg-[#132911] px-5 py-5 inline-block">

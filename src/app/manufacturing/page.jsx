@@ -1,10 +1,14 @@
+import HolyIntimates from "@/components/Manufacturing/HolyIntimates";
 import LingerieAndIntimates from "@/components/Manufacturing/LingerieAndIntimates";
+import MajorBuyer from "@/components/Manufacturing/MajorBuyer";
 import ManufacturItems from "@/components/Manufacturing/ManufacturItems";
-import ManufacturSteps from "@/components/Manufacturing/ManufacturSteps";
+import ManufacturStepsLarge from "@/components/Manufacturing/ManufacturStepsLarge";
+import ManufacturStepsSmall from "@/components/Manufacturing/ManufacturStepsSmall";
 import ManufacturingUnit from "@/components/Manufacturing/ManufacturingUnit";
+import OurProducts from "@/components/Manufacturing/OurProducts";
+import ProductionCapacity from "@/components/Manufacturing/ProductionCapacity";
 import ReUseableBanner from "@/components/Reuseable/ReUseableBanner";
 import MasterLayout from "@/layout/MasterLayout";
-import React from "react";
 
 export const metadata = {
   title: "Struggle | Manufacturing",
@@ -38,13 +42,18 @@ const page = async () => {
   const data = await getData();
   return (
     <MasterLayout>
-      <div>
+      <div className="bg-[#E4E4E4]">
         <ReUseableBanner
           title="Global Manufacturing"
           img="/images/bg_banner2.png"
         />
         <ManufacturItems data={data?.data?.data} />
-        <ManufacturSteps />
+        <ManufacturStepsLarge/>
+        <ManufacturStepsSmall />
+        <OurProducts/>
+        <ProductionCapacity/>
+        <MajorBuyer/>
+        <HolyIntimates/>
         <LingerieAndIntimates data={data?.lingerie?.data} />
         <ManufacturingUnit data={data?.basicUnit?.data} />
       </div>
