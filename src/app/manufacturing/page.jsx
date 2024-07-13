@@ -42,7 +42,7 @@ const page = async () => {
   const data = await getData();
   return (
     <MasterLayout>
-      <div className="bg-[#E4E4E4]">
+      <div className="">
         <ReUseableBanner
           title="Global Manufacturing"
           img="/images/bg_banner2.png"
@@ -50,8 +50,8 @@ const page = async () => {
         <ManufacturItems data={data?.data?.data} />
         <ManufacturStepsLarge/>
         <ManufacturStepsSmall />
-        <OurProducts/>
         <ProductionCapacity/>
+        <OurProducts/>
         <MajorBuyer/>
         <HolyIntimates/>
         <LingerieAndIntimates data={data?.lingerie?.data} />

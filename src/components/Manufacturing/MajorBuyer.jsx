@@ -41,7 +41,7 @@ const MajorBuyer = () => {
     },
   ];
   return (
-    <div className="my-20">
+    <div className="py-20 bg-black">
       <div className="wrapper">
         <div className="text-center">
           <h1 className="md:text-[50px] sm:text-[30px] text-[20px] leading-[62px] font-semibold bg-[#D9D9D9] inline p-5">

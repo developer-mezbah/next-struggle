@@ -17,7 +17,7 @@ const ManufacturItems = ({ data }) => {
           {data?.description}
         </p>
       </div>
-      {data?.img && (
+      {/* {data?.img && (
         <div
           className="md:py-20 py-10 md:mt-10 mt-3"
           style={{
@@ -40,7 +40,7 @@ const ManufacturItems = ({ data }) => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
