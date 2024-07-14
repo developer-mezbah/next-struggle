@@ -2,9 +2,9 @@ import React from "react";
 
 const ProductionCapacity = () => {
   return (
-    <div className="my-20">
+    <div className="md:my-20 my-10 py-5">
       <div className="wrapper">
-        <div className="text-left">
+        <div className="text-center">
           <h1 className="md:text-[42px] sm:text-[30px] text-[20px] leading-[62px] font-medium bg-[#D9D9D9] text-[#111204] inline p-5">
             PRODUCTION CAPACITY
           </h1>

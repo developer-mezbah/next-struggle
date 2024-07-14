@@ -23,17 +23,12 @@ async function getData() {
         cache: "no-store",
       })
     ).json();
-    const lingerie = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/lingerie`, {
-        cache: "no-store",
-      })
-    ).json();
     const basicUnit = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/basic-unit`, {
         cache: "no-store",
       })
     ).json();
-    return { data, lingerie, basicUnit };
+    return { data, basicUnit };
   } catch (error) {
     console.log(error);
   }
@@ -56,7 +51,7 @@ const page = async () => {
         <OurProducts/>
         <MajorBuyer/>
         <HolyIntimates/>
-        <LingerieAndIntimates data={data?.lingerie?.data} />
+        <LingerieAndIntimates />
         {/* <ManufacturingUnit data={data?.basicUnit?.data} /> */}
       </div>
     </MasterLayout>

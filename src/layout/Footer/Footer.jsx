@@ -35,7 +35,7 @@ const Footer = async () => {
         <div className="mx-auto md:space-y-7 space-y-4 md:px-5 px-2 md:py-14 py-5 text-center rounded-3xl footer-banner absolute lg:left-[150px] lg:right-[150px] left-2 right-2 md:-mt-[250px] -mt-[150px]">
           <i>
             <h1 className="text-textLight font-bold lg:text-4xl text-2xl mt-5">
-            Make relationship <br /> with your promotional orders
+              Make relationship <br /> with your promotional orders
             </h1>
           </i>
           <p className="text-[18px] text-textLight font-normal">
@@ -76,13 +76,13 @@ const Footer = async () => {
               <div className="flex gap-5">
                 <Link
                   className="text-textLight text-3xl hover:text-primary delay-75"
-                  href="/"
+                  href="https://www.facebook.com/share/zWskqrghouEvd4Uw/?mibextid=kFxxJD"
                 >
                   <FaFacebook />
                 </Link>
                 <Link
                   className="text-textLight text-3xl hover:text-primary delay-75"
-                  href="/"
+                  href="https://www.instagram.com/strugglestylewear?igsh=MXd0aDA3aXJ1dDJxcg%3D%3D&utm_source=qr"
                 >
                   <FaInstagram />
                 </Link>
@@ -94,7 +94,7 @@ const Footer = async () => {
                 </Link>
                 <Link
                   className="text-textLight text-3xl hover:text-primary delay-75"
-                  href="/"
+                  href="https://x.com/struggl86081532?s=11"
                 >
                   <FaDribbble />
                 </Link>

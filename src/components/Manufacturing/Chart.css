@@ -3,29 +3,21 @@
   --level-2: transparent;
   --level-3: transparent;
   --level-4: transparent;
-  /* --level-2: #f5cc7f;
-  --level-3: #7b9fe0;
-  --level-4: #f27c8d; */
   --black: black;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
-ol {
+.chart ol {
   list-style: none;
 }
 
-body {
+.chart {
   margin: 50px 0 100px;
   text-align: center;
   font-family: "Inter", sans-serif;
 }
 
-.container {
+.chart .container {
   max-width: 1000px;
   padding: 0 10px;
   margin: 0 auto;
@@ -43,7 +35,15 @@ body {
 .level-1 {
   width: 50%;
   margin: 0 auto 40px;
-  background: var(--level-1);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px;
+  background-image: url("/images/manufactur/step12.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #20FB8B;
+  background-blend-mode: multiply;
+  font-size: 25px;
 }
 
 .level-1::before {

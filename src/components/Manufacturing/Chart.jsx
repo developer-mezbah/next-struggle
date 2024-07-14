@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const Chart = () => {
   return (
-    <div className="md:my-20 my-10">
+    <div className="md:my-20 my-10 py-20 chart">
       <div className="wrapper">
-        <div className="container">
+        <div className="container lg:scale-125">
           <h1 className="level-1 rectangle">Order procument</h1>
           <ol className="level-2-wrapper">
             <li>
