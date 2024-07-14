@@ -69,7 +69,7 @@ const router = useRouter()
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center md:gap-5 gap-2 my-10 font-medium text-[#A3AED1]">
+      <div className="flex flex-wrap justify-center items-center md:gap-5 gap-2 my-10 font-medium text-[#A3AED1]">
         <button
           onClick={prePage}
           className="rounded-full w-12 h-12 overflow-hidden flex justify-center items-center border-2 border-[#6a4ea5] hover:bg-[rgb(106,78,165)]"

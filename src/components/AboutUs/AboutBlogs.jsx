@@ -43,32 +43,39 @@ const AboutBlogs = async ({ aboutBlogs }) => {
             data-aos="fade-up"
             className="border-0 h-[16px] w-[140px] bg-accent mt-5 mb-10"
           />
-          <p
-            data-aos="fade-down"
-            className="text-accent md:text-[20px] font-normal mt-5"
-          >
-            With global economic activity recovering, we have resumed our quest
-            to become No. 1 brand around the world. On Year 2020, we started our
-            global trading from Bangladesh with a focus on bringing together
-            Apparel and Art. Economies and people have grown insular during the
-            COVID-19 pandemic, but we have the power to brighten customer mood
-            by conducting our business with energy and enthusiasm. Opened in
-            September 2023, our newly refurbished STRUGGLE Style Inc. started
-            operation from New York, USA to optimizes our idea for our buyers
-            and partners. <br /> Our Struggle Style philosophy is to enrich the
-            lives of everywhere with simple, high-quality clothing. Struggle
-            Style is the concrete expression our commitment to reduce the
-            environmental impact of our daily business activities, to help
-            achieve sustainable growth for society and to make the world a
-            better place through our business and products. As society and
-            Struggle Style evolve, affinity and support for Struggle Style is
-            growing everywhere. <br /> The unique concept of Struggle Style is
-            the foundation on which we continue to expand our business
-            internationally as we pursue our corporate commitment: Changing
-            clothes. Changing commercial wisdom. Change the world. I am keen to
-            join forces with enterprising individuals and companies worldwide to
-            build framework for sustainable growth
-          </p>
+          <div>
+          <Image className="float-left mr-5 mb-2" src="/images/didar.jpg" width={200} height={200} alt="" />
+            <div>
+              <p
+                data-aos="fade-down"
+                className="text-accent md:text-[20px] font-normal mt-5 text-justify"
+              >
+                <b>Message from CEO</b> <br />
+                With global economic activity recovering, we have resumed our
+                quest to become No. 1 brand around the world. On Year 2020, we
+                started our global trading from Bangladesh with a focus on
+                bringing together Apparel and Art. Economies and people have
+                grown insular during the COVID-19 pandemic, but we have the
+                power to brighten customer mood by conducting our business with
+                energy and enthusiasm. Opened in September 2023, our newly
+                refurbished STRUGGLE Style Inc. started operation from New York,
+                USA to optimizes our idea for our buyers and partners. <br />{" "}
+                Our Struggle Style philosophy is to enrich the lives of
+                everywhere with simple, high-quality clothing. Struggle Style is
+                the concrete expression our commitment to reduce the
+                environmental impact of our daily business activities, to help
+                achieve sustainable growth for society and to make the world a
+                better place through our business and products. As society and
+                Struggle Style evolve, affinity and support for Struggle Style
+                is growing everywhere. <br /> The unique concept of Struggle
+                Style is the foundation on which we continue to expand our
+                business internationally as we pursue our corporate commitment:
+                Changing clothes. Changing commercial wisdom. Change the world.
+                I am keen to join forces with enterprising individuals and
+                companies worldwide to build framework for sustainable growth
+              </p>
+            </div>
+          </div>
           <h2 className="text-[25px] font-bold">Didarul Maksud, CEO</h2>
         </div>
       </div>
@@ -88,7 +95,10 @@ const AboutBlogs = async ({ aboutBlogs }) => {
                     {item?.title}
                   </h2>
                   <p className="text-textLight">{item?.subTitle}</p>
-                  <Link href="/manufacturing" className="flex items-center gap-5 justify-center px-8 py-5 rounded-xl bg-white font-semibold hover:bg-gray-200 group">
+                  <Link
+                    href="/manufacturing"
+                    className="flex items-center gap-5 justify-center px-8 py-5 rounded-xl bg-white font-semibold hover:bg-gray-200 group"
+                  >
                     <span>Our Concept</span>
                     <span className="text-primary text-2xl">
                       <FaArrowRightLong className="group-hover:translate-x-1.5" />
