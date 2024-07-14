@@ -69,7 +69,7 @@ const AboutBlogs = async ({ aboutBlogs }) => {
             join forces with enterprising individuals and companies worldwide to
             build framework for sustainable growth
           </p>
-          <h2 className="text-[25px]">Didarul Maksud, CEO</h2>
+          <h2 className="text-[25px] font-bold">Didarul Maksud, CEO</h2>
         </div>
       </div>
       <div className="bg-accent py-[100px]">
