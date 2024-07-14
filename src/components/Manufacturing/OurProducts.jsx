@@ -22,21 +22,37 @@ const OurProducts = () => {
           <h4 className="leading-[40px] font-semibold sm:text-[28px] mt-10">
             We are specialized in Woven Garments Like-
           </h4>
-          <ul className="grid md:grid-cols-2 list-disc lg:text-[22px] text-[18px] lg:leading-[44px] leading-[30px] font-medium mt-5 mx-2 gap-5">
-            <li>Men’s, Ladies & Children Denim Pant</li>
-            <li>Long/Short Chino Pant</li>
-            <li>Cargo long & short pant</li>
-            <li>Bermuda shorts, Capri, Overall, Short all, Skirt etc </li>
-            <li>Men’s, Ladies & Children denim/ non-denim shorts.</li>
+          {/* lg:text-[22px] text-[18px] lg:leading-[44px] leading-[30px] font-medium mt-5 mx-2 gap-5 */}
+          <ul className="grid md:grid-cols-2 list-disc gap-5">
+            <li className="flex gap-5 items-center justify-between">
+              <span>Men’s, Ladies & Children Denim Pant</span>
+              <Image className="h-[80px] w-[100px] object-cover" src="/images/manufactur/m-our-products-1.png" width={100} height={100} alt="" />
+            </li>
+            <li className="flex gap-5 items-center justify-between">
+              <span>Long/Short Chino Pant</span>
+              <Image className="h-[80px] w-[100px] object-cover" src="/images/manufactur/m-our-products-2.png" width={100} height={100} alt="" />
+            </li>
+            <li className="flex gap-5 items-center justify-between">
+              <span>Cargo long & short pant</span>
+              <Image className="h-[80px] w-[100px] object-cover" src="/images/manufactur/m-our-products-3.png" width={100} height={100} alt="" />
+            </li>
+            <li className="flex gap-5 items-center justify-between">
+              <span>Bermuda shorts, Capri, Overall, Short all, Skirt etc </span>
+              <Image className="h-[80px] w-[100px] object-cover" src="/images/manufactur/m-our-products-4.png" width={100} height={100} alt="" />
+            </li>
+            <li className="flex gap-5 items-center justify-between">
+              <span>Men’s, Ladies & Children denim/ non-denim shorts.</span>
+              <Image className="h-[80px] w-[100px] object-cover" src="/images/manufactur/m-our-products-5.png" width={100} height={100} alt="" />
+            </li>
           </ul>
-        <div className="absolute top-0 lg:-left-[300px] md:-left-[200px] md:block hidden">
-          <Image
-            src="/images/products-bg-shape.png"
-            width={200}
-            height={200}
-            alt="shape"
-          />
-        </div>
+          <div className="absolute top-0 lg:-left-[300px] md:-left-[200px] md:block hidden">
+            <Image
+              src="/images/products-bg-shape.png"
+              width={200}
+              height={200}
+              alt="shape"
+            />
+          </div>
         </div>
       </div>
     </div>

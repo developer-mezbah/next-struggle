@@ -11,7 +11,6 @@ const CircularCarousel = () => {
       name: "Didarul Maksud",
       title: "CEO",
       phone: "+12675368321",
-      location: "",
       email: "didar@strugglestyle.net",
       img: "/images/didar.jpg",
     },
@@ -27,8 +26,8 @@ const CircularCarousel = () => {
       name: "Shakhawat Hossain",
       title: "Managing Director",
       phone: "+8801707936699",
-      location: "GA-130A Progati Sharani,Gulshan, Dhaka 1212",
       email: "info@strugglestyle.net ",
+      location: "Dhaka Office",
       img: "/images/shakhawat.jpg",
     },
   ];
@@ -78,11 +77,6 @@ const CircularCarousel = () => {
               <div>
                 <span className="text-primary text-lg">
                   {info[focusElement]?.title}
-                </span>{" "}
-              </div>
-              <div>
-                <span className="text-primary text-lg">
-                  {info[focusElement]?.location}
                 </span>{" "}
               </div>
               <div>

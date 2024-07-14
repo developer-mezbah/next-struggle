@@ -17,7 +17,12 @@ async function getData() {
     const review = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/review`)
     ).json();
-    return { aboutBlogs: await aboutBlogs.json(), heroData, review };
+    const contactUs = await (
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/contact-us`, {
+        cache: "no-store",
+      })
+    ).json();
+    return { aboutBlogs: await aboutBlogs.json(), heroData, review,contactUs };
   } catch (error) {
     console.log(error);
   }
@@ -45,6 +50,7 @@ const About = async () => {
         <AboutBlogs
           aboutBlogs={data?.aboutBlogs?.data}
           heroData={data?.heroData?.data}
+          contactUs={data?.contactUs}
         />
         <Testimonials data={data?.review?.data} />
       </div>

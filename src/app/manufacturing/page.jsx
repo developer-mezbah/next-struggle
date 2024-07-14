@@ -1,3 +1,4 @@
+import Chart from "@/components/Manufacturing/Chart";
 import HolyIntimates from "@/components/Manufacturing/HolyIntimates";
 import LingerieAndIntimates from "@/components/Manufacturing/LingerieAndIntimates";
 import MajorBuyer from "@/components/Manufacturing/MajorBuyer";
@@ -48,14 +49,15 @@ const page = async () => {
           img="/images/bg_banner2.png"
         />
         <ManufacturItems data={data?.data?.data} />
-        <ManufacturStepsLarge/>
-        <ManufacturStepsSmall />
+        {/* <ManufacturStepsLarge/>
+        <ManufacturStepsSmall /> */}
+        <Chart/>
         <ProductionCapacity/>
         <OurProducts/>
         <MajorBuyer/>
         <HolyIntimates/>
         <LingerieAndIntimates data={data?.lingerie?.data} />
-        <ManufacturingUnit data={data?.basicUnit?.data} />
+        {/* <ManufacturingUnit data={data?.basicUnit?.data} /> */}
       </div>
     </MasterLayout>
   );

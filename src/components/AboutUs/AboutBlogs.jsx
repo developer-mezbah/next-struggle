@@ -2,7 +2,34 @@ import Image from "next/image";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const AboutBlogs = ({ aboutBlogs, heroData }) => {
+
+
+const AboutBlogs = async ({ aboutBlogs, heroData,contactUs }) => {
+  const info = [
+    {
+      name: "Didarul Maksud",
+      title: "CEO",
+      phone: "+12675368321",
+      email: "didar@strugglestyle.net",
+      img: "/images/didar.jpg",
+    },
+    {
+      name: "Kamrul Hasan",
+      title: "Managing Director",
+      phone: "+14753198400",
+      location: "USA office",
+      email: "kamrul@strugglestyle.net",
+      img: "/images/kamrul.jpg",
+    },
+    {
+      name: "Shakhawat Hossain",
+      title: "Managing Director",
+      phone: "+8801707936699",
+      email: "info@strugglestyle.net ",
+      location: "Dhaka Office",
+      img: "/images/shakhawat.jpg",
+    },
+  ];
   return (
     <>
       {heroData && (
@@ -10,9 +37,7 @@ const AboutBlogs = ({ aboutBlogs, heroData }) => {
           <div className="py-10">
             <h1
               data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
-              className="text-accent font-bold text-[50px] leading-[60px]"
+              className="text-green-500 font-bold text-[50px] leading-[60px]"
             >
               {heroData?.title}
               {/* We Build Bridge <br />
@@ -20,9 +45,9 @@ const AboutBlogs = ({ aboutBlogs, heroData }) => {
             </h1>
             <hr
               data-aos="fade-up"
-              className="border-0 h-[16px] w-[140px] bg-primary mt-5 mb-10"
+              className="border-0 h-[16px] w-[140px] bg-accent mt-5 mb-10"
             />
-            <Image
+            {/* <Image
               data-aos="fade-up"
               data-aos-duration="2000"
               className="w-full md:h-[550px] object-cover"
@@ -31,7 +56,7 @@ const AboutBlogs = ({ aboutBlogs, heroData }) => {
               width={800}
               height={800}
               alt=""
-            />
+            /> */}
           </div>
         </div>
       )}
@@ -71,6 +96,72 @@ const AboutBlogs = ({ aboutBlogs, heroData }) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="wrapper">
+          <h1
+            data-aos="fade-right"
+            className="text-textLight font-bold text-[50px] leading-[60px] md:mt-20 mt-10"
+          >
+            Our Team
+          </h1>
+          <hr
+            data-aos="fade-up"
+            className="border-0 h-[16px] w-[140px] bg-[#1F2937] mt-5 mb-10"
+          />
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 md:justify-between gap-5 mt-10">
+            {info.map((item, index) => (
+              <div className="w-full mx-auto" key={index}>
+                <div className="w-full rounded-lg shadow bg-gray-800 border-gray-700">
+                  <div className="flex flex-col items-center py-10 px-5">
+                    <Image
+                      className="w-24 h-24 mb-3 rounded-full shadow-lg"
+                      src={item?.img}
+                      alt="Bonnie image"
+                      width={200}
+                      height={200}
+                    />
+                    <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+                      {item?.name}
+                    </h5>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {item?.title}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {item?.phone}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {item?.email}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {item?.location}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div data-aos="zoom-in" className="bg-black py-10">
+        <div className="wrapper">
+          <div className="md:flex items-center justify-between text-textLight space-y-5 md:space-y-0">
+            <div className="w-full">
+              <h1 className="text-[50px] leading-[60px] text-textLight font-semibold">
+                Location:
+              </h1>
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <p>{contactUs?.data?.locationOne}</p>
+              <div className="location-bar h-[50px] w-[4px] bg-primary mr-5 md:flex hidden"></div>
+            </div>
+            <div className="w-full flex justify-between items-center">
+              <p>{contactUs?.data?.locationTwo}</p>
+              <div className="location-bar h-[50px] w-[4px] bg-primary mr-5 md:flex hidden"></div>
+            </div>
+            <div className="w-full">
+              <p>{contactUs?.data?.locationThree}</p>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -10,9 +10,7 @@ const ProductionCapacity = () => {
           </h1>
         </div>
         <h4 className="leading-[48px] font-medium text-[32px] mt-10">
-          We have 10 production lines (Master) and our production capacity is
-          400,000 pcs per month (Average). Minimum Order Quantity (MOQ): 5,000
-          Pcs/Style.
+        To became one of the states of the art leading companies with a focus on responsible business, corporate ethics and ensuring the environmental safegurad and Our Mission is to pursue sustainable business growth, continually refine our unique process, foster a working environment for employee satisfaction, cherish the relationship with our stakeholders and commit to a safe greener environemnt .
         </h4>
       </div>
     </div>
