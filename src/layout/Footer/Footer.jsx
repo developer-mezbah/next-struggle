@@ -88,7 +88,7 @@ const Footer = async () => {
                 </Link>
                 <Link
                   className="text-textLight text-3xl hover:text-primary delay-75"
-                  href="/"
+                  href="https://www.linkedin.com/in/struggle-style-wear-952125307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 >
                   <FaLinkedinIn />
                 </Link>

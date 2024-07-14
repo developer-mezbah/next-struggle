@@ -12,15 +12,10 @@ async function getData() {
         cache: "no-store",
       }
     );
-    const heroData = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero`, {
-        cache: "no-store",
-      })
-    ).json();
     const review = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/review`)
     ).json();
-    return { aboutBlogs: await aboutBlogs.json(), heroData, review };
+    return { aboutBlogs: await aboutBlogs.json(), review };
   } catch (error) {
     console.log(error);
   }

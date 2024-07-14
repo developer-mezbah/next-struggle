@@ -13,6 +13,7 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 import { SiAmazonsimpleemailservice } from "react-icons/si";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const ContactForm = ({ data }) => {
   const [currentDomain, setCurrentDomain] = useState("");
@@ -111,18 +112,30 @@ const ContactForm = ({ data }) => {
                 <span>{currentDomain}</span>
               </div>
               <div className="flex gap-10 text-2xl text-accent">
-                <button className=" hover:text-primary">
+                <Link
+                  href="https://www.facebook.com/share/zWskqrghouEvd4Uw/?mibextid=kFxxJD"
+                  className=" hover:text-primary"
+                >
                   <FaFacebookF />
-                </button>
-                <button className=" hover:text-primary">
+                </Link>
+                <Link
+                  href="https://x.com/struggl86081532?s=11"
+                  className=" hover:text-primary"
+                >
                   <FaTwitter />
-                </button>
-                <button className=" hover:text-primary">
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/struggle-style-wear-952125307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  className=" hover:text-primary"
+                >
                   <FaLinkedinIn />
-                </button>
-                <button className=" hover:text-primary">
+                </Link>
+                <Link
+                  href="https://www.instagram.com/strugglestylewear?igsh=MXd0aDA3aXJ1dDJxcg%3D%3D&utm_source=qr"
+                  className=" hover:text-primary"
+                >
                   <FaInstagram />
-                </button>
+                </Link>
               </div>
             </div>
             <div data-aos="fade-left" className="w-full">

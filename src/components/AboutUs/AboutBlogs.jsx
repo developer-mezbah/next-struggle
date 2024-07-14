@@ -1,10 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-
-
-const AboutBlogs = async ({ aboutBlogs, heroData }) => {
+const AboutBlogs = async ({ aboutBlogs }) => {
   const info = [
     {
       name: "Didarul Maksud",
@@ -32,34 +31,47 @@ const AboutBlogs = async ({ aboutBlogs, heroData }) => {
   ];
   return (
     <>
-      {heroData && (
-        <div className="wrapper about-blogs my-10">
-          <div className="py-10">
-            <h1
-              data-aos="fade-right"
-              className="text-green-500 font-bold text-[50px] leading-[60px]"
-            >
-              {heroData?.title}
-              {/* We Build Bridge <br />
-            Between Your Expectation <br />& Reality */}
-            </h1>
-            <hr
-              data-aos="fade-up"
-              className="border-0 h-[16px] w-[140px] bg-accent mt-5 mb-10"
-            />
-            {/* <Image
-              data-aos="fade-up"
-              data-aos-duration="2000"
-              className="w-full md:h-[550px] object-cover"
-              // src="/images/about-us-2.png"
-              src={heroData?.img}
-              width={800}
-              height={800}
-              alt=""
-            /> */}
-          </div>
+      <div className="wrapper about-blogs my-10">
+        <div className="py-10">
+          <h1
+            data-aos="fade-right"
+            className="text-green-500 font-bold text-[50px] leading-[60px]"
+          >
+            We Build Bridge Between Your Expectation & Reality
+          </h1>
+          <hr
+            data-aos="fade-up"
+            className="border-0 h-[16px] w-[140px] bg-accent mt-5 mb-10"
+          />
+          <p
+            data-aos="fade-down"
+            className="text-accent md:text-[20px] font-normal mt-5"
+          >
+            With global economic activity recovering, we have resumed our quest
+            to become No. 1 brand around the world. On Year 2020, we started our
+            global trading from Bangladesh with a focus on bringing together
+            Apparel and Art. Economies and people have grown insular during the
+            COVID-19 pandemic, but we have the power to brighten customer mood
+            by conducting our business with energy and enthusiasm. Opened in
+            September 2023, our newly refurbished STRUGGLE Style Inc. started
+            operation from New York, USA to optimizes our idea for our buyers
+            and partners. <br /> Our Struggle Style philosophy is to enrich the
+            lives of everywhere with simple, high-quality clothing. Struggle
+            Style is the concrete expression our commitment to reduce the
+            environmental impact of our daily business activities, to help
+            achieve sustainable growth for society and to make the world a
+            better place through our business and products. As society and
+            Struggle Style evolve, affinity and support for Struggle Style is
+            growing everywhere. <br /> The unique concept of Struggle Style is
+            the foundation on which we continue to expand our business
+            internationally as we pursue our corporate commitment: Changing
+            clothes. Changing commercial wisdom. Change the world. I am keen to
+            join forces with enterprising individuals and companies worldwide to
+            build framework for sustainable growth
+          </p>
+          <h2 className="text-[25px]">Didarul Maksud, CEO</h2>
         </div>
-      )}
+      </div>
       <div className="bg-accent py-[100px]">
         <div className="wrapper space-y-20">
           {aboutBlogs?.map((item, index) => (
@@ -76,12 +88,12 @@ const AboutBlogs = async ({ aboutBlogs, heroData }) => {
                     {item?.title}
                   </h2>
                   <p className="text-textLight">{item?.subTitle}</p>
-                  <button className="flex items-center gap-5 justify-center px-8 py-5 rounded-xl bg-white font-semibold hover:bg-gray-200 group">
+                  <Link href="/manufacturing" className="flex items-center gap-5 justify-center px-8 py-5 rounded-xl bg-white font-semibold hover:bg-gray-200 group">
                     <span>Our Concept</span>
                     <span className="text-primary text-2xl">
                       <FaArrowRightLong className="group-hover:translate-x-1.5" />
                     </span>
-                  </button>
+                  </Link>
                 </div>
                 <div className="w-full">
                   <Image
@@ -111,7 +123,7 @@ const AboutBlogs = async ({ aboutBlogs, heroData }) => {
           <div className="grid md:grid-cols-3 sm:grid-cols-2 md:justify-between gap-5 mt-10">
             {info.map((item, index) => (
               <div className="w-full mx-auto" key={index}>
-                <div className="w-full rounded-lg shadow bg-gray-800 border-gray-700">
+                <div className="w-full rounded-lg shadow bg-gray-800 border-gray-700 h-[300px]">
                   <div className="flex flex-col items-center py-10 px-5">
                     <Image
                       className="w-24 h-24 mb-3 rounded-full shadow-lg"
@@ -120,19 +132,13 @@ const AboutBlogs = async ({ aboutBlogs, heroData }) => {
                       width={200}
                       height={200}
                     />
-                    <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+                    <h5 className="mb-1 text-xl font-medium text-white">
                       {item?.name}
                     </h5>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {item?.title}
-                    </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {item?.phone}
-                    </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
-                      {item?.email}
-                    </span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                    <span className="text-sm text-gray-400">{item?.title}</span>
+                    <span className="text-sm text-gray-400">{item?.phone}</span>
+                    <span className="text-sm text-gray-400">{item?.email}</span>
+                    <span className="text-sm text-gray-400">
                       {item?.location}
                     </span>
                   </div>
@@ -155,11 +161,17 @@ const AboutBlogs = async ({ aboutBlogs, heroData }) => {
               <div className="location-bar h-[50px] w-[4px] bg-primary mr-5 md:flex hidden"></div>
             </div>
             <div className="w-full flex justify-between items-center">
-              <p>Hong Kong office Kwong Yuen Building  2/F, Flat-P 4 <br /> Kam Lam Street, Kowloon Hong Kong</p>
+              <p>
+                Hong Kong office <br /> Kwong Yuen Building 2/F, Flat-P 4 <br />{" "}
+                Kam Lam Street, Kowloon Hong Kong
+              </p>
               <div className="location-bar h-[50px] w-[4px] bg-primary mr-5 md:flex hidden"></div>
             </div>
             <div className="w-full">
-              <p>Bangladesh office Azhar Comfort Complex, Level 9 <br /> GA-130/A, Progati Sharani Gulshan-1, Dhaka 1212</p>
+              <p>
+                Bangladesh office <br /> Azhar Comfort Complex, Level 9 <br />{" "}
+                GA-130/A, Progati Sharani Gulshan-1, Dhaka 1212
+              </p>
             </div>
           </div>
         </div>
