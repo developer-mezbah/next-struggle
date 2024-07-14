@@ -10,7 +10,16 @@ const ProductionCapacity = () => {
           </h1>
         </div>
         <h4 className="leading-[48px] font-medium text-[32px] mt-10">
-        To became one of the states of the art leading companies with a focus on responsible business, corporate ethics and ensuring the environmental safegurad and Our Mission is to pursue sustainable business growth, continually refine our unique process, foster a working environment for employee satisfaction, cherish the relationship with our stakeholders and commit to a safe greener environemnt .
+          To became one of the states of the art leading companies with a focus
+          on responsible business, corporate ethics and ensuring the
+          environmental safegurad and Our Mission is to pursue sustainable
+          business growth, continually refine our unique process, foster a
+          working environment for employee satisfaction, cherish the
+          relationship with our stakeholders and commit to a safe greener
+          environemnt .Our goal is to be renowned as a trustworthy and efficient
+          partner for our associates – both local and foreign – by delivering on
+          time products of high and consistent quality and engaging in ethical
+          and sustainable business practices.
         </h4>
       </div>
     </div>

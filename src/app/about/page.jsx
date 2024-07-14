@@ -7,7 +7,10 @@ import React from "react";
 async function getData() {
   try {
     const aboutBlogs = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`,
+      {
+        cache: "no-store",
+      }
     );
     const heroData = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero`, {
@@ -17,12 +20,7 @@ async function getData() {
     const review = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/review`)
     ).json();
-    const contactUs = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/contact-us`, {
-        cache: "no-store",
-      })
-    ).json();
-    return { aboutBlogs: await aboutBlogs.json(), heroData, review,contactUs };
+    return { aboutBlogs: await aboutBlogs.json(), heroData, review };
   } catch (error) {
     console.log(error);
   }
@@ -50,7 +48,6 @@ const About = async () => {
         <AboutBlogs
           aboutBlogs={data?.aboutBlogs?.data}
           heroData={data?.heroData?.data}
-          contactUs={data?.contactUs}
         />
         <Testimonials data={data?.review?.data} />
       </div>

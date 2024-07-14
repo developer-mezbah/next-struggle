@@ -1,6 +1,7 @@
 import React from "react";
 import "./Chart.css";
 import Image from "next/image";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 
 const Chart = () => {
   return (
@@ -11,7 +12,7 @@ const Chart = () => {
           <ol className="level-2-wrapper">
             <li>
               <h2 className="level-2 rectangle">
-                merchendising
+                Merchendising
                 <Image
                   className="mx-auto pt-2"
                   src="/images/manufactur/step16.png"
@@ -23,7 +24,7 @@ const Chart = () => {
               <ol className="level-3-wrapper">
                 <li>
                   <h3 className="level-3 rectangle">
-                    design
+                    Design
                     <Image
                       className="mx-auto pt-2"
                       src="/images/manufactur/step4.png"
@@ -35,7 +36,7 @@ const Chart = () => {
                   <ol className="level-4-wrapper">
                     <li>
                       <h4 className="level-4 rectangle ">
-                        raw sourcing
+                        Raw sourcing
                         <Image
                           className="mx-auto pt-2"
                           src="/images/manufactur/step6.png"
@@ -49,7 +50,7 @@ const Chart = () => {
                 </li>
                 <li>
                   <h3 className="level-3 rectangle ">
-                    sample section
+                    Sample section
                     <Image
                       className="mx-auto pt-2"
                       src="/images/manufactur/step8.png"
@@ -58,10 +59,10 @@ const Chart = () => {
                       alt=""
                     />
                   </h3>
-                  <ol className="level-4-wrapper">
-                    <li>
+                  <ol className="level-4-wrapper relative z-20">
+                    <li className="z-20">
                       <h4 className="level-4 rectangle ">
-                        production
+                        Production
                         <Image
                           className="mx-auto pt-2"
                           src="/images/manufactur/step14.png"
@@ -71,6 +72,9 @@ const Chart = () => {
                         />
                       </h4>
                     </li>
+                    <div className="last-ractangle absolute w-[200px] h-[2px] bg-black top-[50%] -right-[100%] z-10">
+                    <MdOutlineArrowForwardIos className=" float-end -mt-[8.2px] -mr-[7px] text-lg" />
+                    </div>
                   </ol>
                 </li>
               </ol>

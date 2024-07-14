@@ -43,7 +43,6 @@
   background-repeat: no-repeat;
   color: #20FB8B;
   background-blend-mode: multiply;
-  font-size: 25px;
 }
 
 .level-1::before {
@@ -249,6 +248,13 @@
 
   .level-2-wrapper > li:not(:first-child) {
     margin-top: 50px;
+  }
+
+  .last-ractangle{
+    rotate: 90deg;
+    top: 100%;
+    right: 10%;
+    width: 80px;
   }
 }
 

@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 
 
-const AboutBlogs = async ({ aboutBlogs, heroData,contactUs }) => {
+const AboutBlogs = async ({ aboutBlogs, heroData }) => {
   const info = [
     {
       name: "Didarul Maksud",
@@ -151,15 +151,15 @@ const AboutBlogs = async ({ aboutBlogs, heroData,contactUs }) => {
               </h1>
             </div>
             <div className="w-full flex justify-between items-center">
-              <p>{contactUs?.data?.locationOne}</p>
+              <p>Head office 2221 Powel Avenue 1st Floor Bronx, NY 10462</p>
               <div className="location-bar h-[50px] w-[4px] bg-primary mr-5 md:flex hidden"></div>
             </div>
             <div className="w-full flex justify-between items-center">
-              <p>{contactUs?.data?.locationTwo}</p>
+              <p>Hong Kong office Kwong Yuen Building  2/F, Flat-P 4 <br /> Kam Lam Street, Kowloon Hong Kong</p>
               <div className="location-bar h-[50px] w-[4px] bg-primary mr-5 md:flex hidden"></div>
             </div>
             <div className="w-full">
-              <p>{contactUs?.data?.locationThree}</p>
+              <p>Bangladesh office Azhar Comfort Complex, Level 9 <br /> GA-130/A, Progati Sharani Gulshan-1, Dhaka 1212</p>
             </div>
           </div>
         </div>

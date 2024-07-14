@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const AboutUs = () => {
@@ -15,14 +16,14 @@ const AboutUs = () => {
           alt=""
         />
         
-        <button className="bg-primary font-semibold px-10 py-3 text-2xl">
+        <Link href="/manufacturing" className="bg-primary font-semibold px-10 py-3 text-2xl">
           Main Manufacturing
-        </button>
+        </Link>
         
       </div>
       <div className="w-full space-y-6" data-aos="fade-up">
         <h2 className="text-textLight font-medium md:text-[55px] text-[35px] md:leading-[80px] leading-[50px] ">
-          our factory.
+          Our Factory.
         </h2>
         <p className="text-textLight">
           Our Mission is to pursue sustainable business growth, continually
@@ -40,9 +41,9 @@ const AboutUs = () => {
           height={600}
           alt=""
         />
-      <button className="btn1 mt-5">
+      <Link href="/manufacturing" className="btn1 mt-5 block">
           special manufacturing
-        </button>
+        </Link>
       </div>
     </div>
   );
