@@ -56,10 +56,10 @@ const UpdateProductsForm = ({
     //   setLoader(false);
     //   return toast.error("Please Upload Thumbnail Image");
     // }
-    if (preview.length === 0) {
-      setLoader(false);
-      return toast.error("Please Upload other Images for product details");
-    }
+    // if (preview.length === 0) {
+    //   setLoader(false);
+    //   return toast.error("Please Upload other Images for product details");
+    // }
     const selectCategory = categories.find((item) => item._id === category);
     const sendData = {
       title,

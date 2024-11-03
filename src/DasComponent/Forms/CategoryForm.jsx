@@ -92,9 +92,6 @@ const CategoryForm = ({ categories }) => {
           <FaTrashCan
             className="text-red-400 cursor-pointer "
             onClick={() => {
-              console.log(
-                `${process.env.NEXT_PUBLIC_SERVER_URL}/category?id=${row?._id}`
-              );
               DeleteAlert(
                 `${process.env.NEXT_PUBLIC_SERVER_URL}/category?id=${row?._id}`
               ).then((result) => {

@@ -13,13 +13,13 @@ export const metadata = {
 async function getData() {
   try {
     const data = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/license`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/license`,{
+        cache: "no-store"
       })
     ).json();
     const brand = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/brand`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/brand`,{
+        cache: "no-store"
       })
     ).json();
     return {data, brand};

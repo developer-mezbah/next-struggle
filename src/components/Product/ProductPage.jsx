@@ -17,7 +17,9 @@ const ProductPage = ({ categoryId, categories }) => {
   );
   useEffect(() => {
     setLoader(true);
-    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category/${catId}`)
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category/${catId}`,{
+      cache: "no-store"
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.status) {

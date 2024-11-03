@@ -7,13 +7,14 @@ import React from "react";
 async function getData() {
   try {
     const aboutBlogs = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`,
-      {
-        cache: "no-store",
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/about-us`,{
+        cache: "no-store"
       }
     );
     const review = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/review`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/review`,{
+        cache: "no-store"
+      })
     ).json();
     return { aboutBlogs: await aboutBlogs.json(), review };
   } catch (error) {

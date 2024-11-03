@@ -103,7 +103,7 @@ export const DasNavData = [
   },
   {
     pageName: "Brands & License",
-    pageTitle: "Licenses",
+    pageTitle: "Brands",
     icon: <GrLicense />,
     subItems: [
       {
@@ -144,15 +144,15 @@ export const DasNavData = [
         name: "Lingerie & Intimates",
         url: "/dashboard/manufacturing/link-and-int",
       },
-      {
-        name: "Basic Unit",
-        url: "/dashboard/manufacturing/basic-unit",
-      },
+      // {
+      //   name: "Basic Unit",
+      //   url: "/dashboard/manufacturing/basic-unit",
+      // },
     ],
   },
   {
     pageName: "Trusted Brands",
-    pageTitle: "brands",
+    pageTitle: "Licenses",
     icon: <GiSwordBrandish/>,
     subItems: [
       {

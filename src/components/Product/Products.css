@@ -1,11 +1,11 @@
 
 .products {
  columns: 2;
- column-gap: 10px;
+ column-gap: 30px;
 }
 .products .box{
   width: 100%;
-  padding: 20px;
+  /* padding: 20px; */
   margin-bottom: 10px;
 }
 

@@ -10,12 +10,14 @@ export const metadata = {
 async function getData() {
   try {
     const heroData = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability/hero`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability/hero`,{
+        cache: "no-store"
       })
     ).json();
     const blogs = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability`,{
+        cache: "no-store"
+      })
     ).json();
     return {heroData,blogs };
   } catch (error) {

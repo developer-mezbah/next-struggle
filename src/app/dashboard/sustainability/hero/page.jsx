@@ -4,7 +4,7 @@ async function getData() {
   try {
     const heroData = await (
       await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/sustainability/hero`, {
-        cache: "no-store",
+        cache: "no-store"
       })
     ).json();
     return heroData;

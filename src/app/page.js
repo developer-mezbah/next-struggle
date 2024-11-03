@@ -12,16 +12,18 @@ import Image from "next/image";
 async function getData() {
   try {
     const categories = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/category`,{
+        cache: "no-store"
       })
     ).json();
     const newsData = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news`,{
+        cache: "no-store"
+      })
     ).json();
     const brand = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/brand`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/brand`,{
+        cache: "no-store"
       })
     ).json();
     return { categories, newsData, brand };
@@ -50,7 +52,7 @@ export default async function Home() {
       {/* Licenses  */}
       <Licenses />
       {/* Blogs */}
-      <Blogs data={data?.newsData?.data.slice(0, 6)} />
+      <Blogs data={data?.newsData?.data?.slice(0, 6)} />
       {/* Youtube Section  */}
       {/* <Youtube /> */}
       <CircularCarousel/>

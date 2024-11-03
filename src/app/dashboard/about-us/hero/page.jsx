@@ -4,8 +4,8 @@ import React from "react";
 async function getData() {
   try {
     const heroData = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/about-us/hero`,{
+        cache: "no-store"
       })
     ).json();
     return heroData;

@@ -16,7 +16,7 @@ const CircularCarousel = () => {
     },
     {
       name: "Kamrul Hasan",
-      title: "Managing Director",
+      title: "Brand Director",
       phone: "+14753198400",
       location: "USA office",
       email: "kamrul@strugglestyle.net",

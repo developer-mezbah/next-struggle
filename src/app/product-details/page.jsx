@@ -7,8 +7,8 @@ import React from "react";
 async function getData(id) {
   try {
     const data = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/product/${id}`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/product/${id}`,{
+        cache: "no-store"
       })
     ).json();
     return { data };

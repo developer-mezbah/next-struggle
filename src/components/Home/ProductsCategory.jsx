@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
-const ProductsCategory = ({categories}) => {
+const ProductsCategory = ({ categories }) => {
   return (
     <div className="wrapper">
       <h1
@@ -18,10 +18,9 @@ const ProductsCategory = ({categories}) => {
       </h1>
       <div className="md:mt-[100px] mt-[50px] grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-10 gap-5">
         {categories?.slice(0, 6).map((item, index) => {
-         
           return (
             <Link
-            href={`/product/${item?._id}`}
+              href={`/product?id=${item?._id}`}
               className={`relative group h-[400px] overflow-hidden mx-auto ${
                 index === 1 || index === 4 ? "md:mt-10" : "md:-mt-10"
               }`}

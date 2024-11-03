@@ -10,11 +10,13 @@ import { MdArrowForwardIos } from "react-icons/md";
 async function getData(id) {
   try {
     const data = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news`)
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news`,{
+        cache: "no-store"
+      })
     ).json();
     const singleData = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news/${id}`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/news/${id}`,{
+        cache: "no-store"
       })
     ).json();
     return { data, singleData };

@@ -19,16 +19,14 @@ export const metadata = {
 async function getData() {
   try {
     const data = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing`, {
-        cache: "no-store",
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/manufacturing`,{
+        cache: "no-store"
       })
     ).json();
-    const basicUnit = await (
-      await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/basic-unit`, {
-        cache: "no-store",
-      })
-    ).json();
-    return { data, basicUnit };
+    // const basicUnit = await (
+    //   await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/basic-unit`)
+    // ).json();
+    return { data };
   } catch (error) {
     console.log(error);
   }

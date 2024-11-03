@@ -14,7 +14,7 @@ const AboutBlogs = async ({ aboutBlogs }) => {
     },
     {
       name: "Kamrul Hasan",
-      title: "Managing Director",
+      title: "Brand Director",
       phone: "+14753198400",
       location: "USA office",
       email: "kamrul@strugglestyle.net",
@@ -50,7 +50,7 @@ const AboutBlogs = async ({ aboutBlogs }) => {
                 data-aos="fade-down"
                 className="text-accent md:text-[20px] font-normal mt-5 text-justify"
               >
-                <b>Message from CEO</b> <br />
+                <b className="text-[25px]">Message from CEO</b> <br />
                 With global economic activity recovering, we have resumed our
                 quest to become No. 1 brand around the world. On Year 2020, we
                 started our global trading from Bangladesh with a focus on
