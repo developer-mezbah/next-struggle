@@ -8,10 +8,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const Brands = ({ data }) => {
   return (
     <div className="py-10" data-aos="fade-up" data-aos-duration="2000">
-      <div className="flex gap-5 justify-center items-center">
-        <span className="h-1 bg-primary rounded-md w-[50px]"></span>
+      <div className="flex gap-5 justify-center items-center whitespace-nowrap">
+        <span className="h-1 bg-primary rounded-md sm:w-[50px] w-[30px]"></span>
         <span className="uppercase text-textLight">OUR ACHIEVEMENTS</span>
-        <span className="h-1 bg-primary rounded-md w-[50px]"></span>
+        <span className="h-1 bg-primary rounded-md sm:w-[50px] w-[30px]"></span>
       </div>
       <div className="bg-[#222222] rounded-2xl mt-5 relative pl-5 pr-5">
         <Swiper
