@@ -77,7 +77,7 @@ const Header = () => {
     {
       _id: 2,
       name: "Product",
-      url: "/product?id=1",
+      url: "/product",
     },
     {
       _id: 3,
@@ -125,8 +125,6 @@ const Header = () => {
                       href={item.url}
                       className={`${
                         path === item.url
-                          ? "text-primary"
-                          : item.url.startsWith(path)
                           ? "text-primary"
                           : "text-textLight"
                       }`}
@@ -201,8 +199,6 @@ const Header = () => {
                   key={item._id}
                   className={`border-b-2 border-gray-500 px-2 py-4 hover:bg-primary hover:text-accent ${
                     path === item.url
-                      ? "text-primary"
-                      : item.url.startsWith(path)
                       ? "text-primary"
                       : "text-textLight"
                   }`}

@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Tabs from "./Tabs";
-import Products from "./Products";
-import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
 import { ProductsData } from "@/utils/FakeData/Products";
+import { useEffect, useState } from "react";
+import { MdArrowForwardIos, MdOutlineArrowBackIosNew } from "react-icons/md";
+import Products from "./Products";
+import Tabs from "./Tabs";
 // import { Categories } from "@/utils/FakeData/Categories";
-import Loading from "../Loading/Loading";
 
 const ProductPage = ({ categoryId, categories }) => {
   const [data, setData] = useState([]);
@@ -13,7 +12,7 @@ const ProductPage = ({ categoryId, categories }) => {
 
   // const [categories, setCategories] = useState([]);
   const [catId, setCatId] = useState(
-    categoryId == "1" ? categories[0]?._id : categoryId
+    !categoryId ? categories[0]?._id : categoryId
   );
   useEffect(() => {
     setLoader(true);
