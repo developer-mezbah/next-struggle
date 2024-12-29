@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Scrollbar } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
-import Image from "next/image";
+import { Autoplay, Pagination, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Brands = ({ data }) => {
   return (
@@ -39,12 +38,12 @@ const Brands = ({ data }) => {
         >
           {data?.map((item) => (
             <SwiperSlide key={item._id}>
-              <div className="card border-0 mr-5 mt-2 rounded-2xl h-[130px] overflow-hidden">
+              <div className="card border-0 mr-5 mt-2 rounded-2xl md:h-[130px] overflow-hidden">
                 <Image
                   width={500}
-                  height={500}
+                  height={200}
                   src={item.img}
-                  className="img-fluid me-5 h-full object-scale-down"
+                  className="md:me-5 md:h-full h-[80px] object-scale-down"
                   alt=""
                 />
               </div>

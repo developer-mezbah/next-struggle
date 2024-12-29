@@ -1,66 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const Blogs = ({ data }) => {
-  // charector 61
-  // const data = [
-  //   {
-  //     _id: 1,
-  //     category: "Branding",
-  //     title: "What is the branding, and what we need it?",
-  //     description:
-  //       "On the other hand, we denounce with righteous indignation and",
-  //     img: "/images/articles/img1.jpg",
-  //   },
-  //   {
-  //     _id: 2,
-  //     category: "TIKTOK",
-  //     title: "What is the branding, and what we need it?",
-  //     description:
-  //       "On the other hand, we denounce with righteous indignation and",
-  //     img: "/images/articles/img2.jpg",
-  //   },
-  //   {
-  //     _id: 3,
-  //     category: "LOGO DESIGN",
-  //     title: "What is the branding, and what we need it?",
-  //     description:
-  //       "On the other hand, we denounce with righteous indignation and",
-  //     img: "/images/articles/img3.jpg",
-  //   },
-  //   {
-  //     _id: 4,
-  //     category: "FB",
-  //     title: "What is the branding, and what we need it?",
-  //     description:
-  //       "On the other hand, we denounce with righteous indignation and",
-  //     img: "/images/articles/img4.jpg",
-  //   },
-  //   {
-  //     _id: 5,
-  //     category: "AI",
-  //     title: "What is the branding, and what we need it?",
-  //     description:
-  //       "On the other hand, we denounce with righteous indignation and",
-  //     img: "/images/articles/img5.jpg",
-  //   },
-  //   {
-  //     _id: 6,
-  //     category: "Branding",
-  //     title: "What is the branding, and what we need it?",
-  //     description:
-  //       "On the other hand, we denounce with righteous indignation and",
-  //     img: "/images/articles/img6.jpg",
-  //   },
-  // ];
-
   return (
     <div className="bg-accent py-10">
       <div className="wrapper">
         <div data-aos="flip-left" data-aos-duration="1200">
           <p className="text-center uppercase text-primary">blogs</p>
-          <h1 className="font-bold text-center text-textLight text-[45px]">
+          <h1 className="font-bold text-center text-textLight md:text-[45px] text-[30px]">
             News & Articles
           </h1>
           <p className="text-[18px] text-textLight text-center">

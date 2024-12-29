@@ -24,7 +24,8 @@ a {
 
 /* Custom swiper style  */
 .brands-slider.swiper {
-  padding: 30px 0px 60px 0px !important;
+  /* padding: 30px 0px 60px 0px !important; */
+  @apply md:pt-[30px] pt-2 md:pb-[60px] pb-[40px] !important;
 }
 .brands-slider .swiper-button-next,
 .brands-slider .swiper-button-prev {
@@ -88,58 +89,56 @@ a {
 }
 
 /* Custom style for Google translate */
-.skiptranslate iframe{
+.skiptranslate iframe {
   display: none !important;
   height: 0px !important;
   opacity: 0 !important;
 }
-body{
+body {
   top: 0px !important;
 }
-#goog-gt-tt{
+#goog-gt-tt {
   display: none !important;
 }
-.VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc{
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
   display: none !important;
 }
 /* #google_translate_element{
   display: none !important;
 } */
 
-.goog-te-gadget-icon{
+.goog-te-gadget-icon {
   display: none !important;
 }
-.skiptranslate .goog-te-gadget-simple{
+.skiptranslate .goog-te-gadget-simple {
   background: #000;
   @apply border-2 border-primary px-2 rounded-md;
 }
-.skiptranslate .goog-te-gadget-simple span a{
+.skiptranslate .goog-te-gadget-simple span a {
   display: flex;
   font-size: 25px;
   color: white;
 }
-.skiptranslate .goog-te-gadget-simple span a span:last-child{
-  color:  green !important;
+.skiptranslate .goog-te-gadget-simple span a span:last-child {
+  color: green !important;
 }
-#google_translate_element{
+#google_translate_element {
   left: -100px !important;
   top: 10px !important;
 }
-.goog-te-gadget-icon{
+.goog-te-gadget-icon {
   /* scale: 1.5; */
 }
 /* .goog-te-gadget-simple{
   display: none !important;
 } */
 
-
-
 /* custom slider of manufaturing */
-.swiper-custom-pagination .swiper-pagination-bullet{
-  background: #D9D9D9;
+.swiper-custom-pagination .swiper-pagination-bullet {
+  background: #d9d9d9;
   width: 15px;
   height: 15px;
 }
-.swiper-custom-pagination .swiper-pagination-bullet-active{
-  background: #20FB8B;
+.swiper-custom-pagination .swiper-pagination-bullet-active {
+  background: #20fb8b;
 }
