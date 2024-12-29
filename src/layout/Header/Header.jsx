@@ -95,11 +95,12 @@ const Header = () => {
       url: "/about",
     },
   ];
+
   return (
     <>
       <div
         id="navbar"
-        className="w-full h-[115px] navbar-section fixed top-0"
+        className="w-full md:h-[115px] navbar-section fixed top-0"
         style={{
           zIndex: 9999999,
           background: navbarBG ? "rgba(0, 0, 0, 0.5)" : "",
@@ -109,7 +110,7 @@ const Header = () => {
           <div className="flex justify-between items-center">
             <Link href="/">
               <Image
-                className="w-[112px] h-[112px]  scale-125"
+                className="md:w-[112px] w-auto md:h-[112px] h-[80px]  scale-125"
                 src="/images/logo.png"
                 width={400}
                 height={200}
@@ -123,7 +124,11 @@ const Header = () => {
                     <Link
                       href={item.url}
                       className={`${
-                        path === item.url ? "text-primary" : "text-[#ffffff]"
+                        path === item.url
+                          ? "text-primary"
+                          : item.url.startsWith(path)
+                          ? "text-primary"
+                          : "text-textLight"
                       }`}
                     >
                       {item.name}
@@ -195,7 +200,11 @@ const Header = () => {
                 <li
                   key={item._id}
                   className={`border-b-2 border-gray-500 px-2 py-4 hover:bg-primary hover:text-accent ${
-                    path === item.url ? "text-primary" : "text-textLight"
+                    path === item.url
+                      ? "text-primary"
+                      : item.url.startsWith(path)
+                      ? "text-primary"
+                      : "text-textLight"
                   }`}
                 >
                   <Link onClick={() => setNavbar(false)} href={item.url}>

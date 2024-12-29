@@ -69,7 +69,7 @@ const Banner = () => {
             <h1 className="lg:text-[70px] md:text-[45px] text-[25px] font-bold capitalize lg:leading-[100px] md:leading-[70px] leading-[40px]">
               <span className="text-[#E99211]">Struggle</span> <span className="lg:text-[50px] md:text-[30px] text-[17px] text-primary">style inc.</span>
             </h1>
-            <p className="text-[30px]">
+            <p className="sm:text-[30px] text-[22px]">
               Quality textiles and apparel with efficiency & Sustainability
               <br />
               <span className="text-primary">
@@ -78,7 +78,7 @@ const Banner = () => {
             </p>
           </div>
           <div>
-            <p className="mt-14 mb-5 text-[25px]">lets begin journey with your promotion</p>
+            <p className="md:mt-14 mt-5 mb-5 sm:text-[25px] text-[18px]">lets begin journey with your promotion</p>
             <div data-aos="flip-down" className="flex gap-5 items-center justify-center">
               <Link href="/contact-us" className="btn1">
                 Contact Us

@@ -1,9 +1,8 @@
 "use client";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import Horizontal from "../Others/Horizontal";
 
 const NavItems = ({ data }) => {
@@ -30,6 +29,9 @@ const NavItems = ({ data }) => {
       }
     });
   }, []);
+
+  console.log(pathname);
+  
   return (
     <>
       <div className="nav-pages px-5 space-y-2 pb-5 block">

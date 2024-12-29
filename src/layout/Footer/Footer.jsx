@@ -1,4 +1,6 @@
-import React from "react";
+import LogoutBtn from "@/components/LoginAndRegister/LogoutBtn";
+import Image from "next/image";
+import Link from "next/link";
 import {
   FaArrowAltCircleRight,
   FaDribbble,
@@ -6,13 +8,9 @@ import {
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
-import "./Footer.css";
-import Image from "next/image";
-import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
-import Link from "next/link";
-import toast from "react-hot-toast";
-import LogoutBtn from "@/components/LoginAndRegister/LogoutBtn";
+import { MdEmail } from "react-icons/md";
+import "./Footer.css";
 
 async function getData() {
   try {
@@ -44,7 +42,7 @@ const Footer = async () => {
           </p>
           <Link
             href="/contact-us"
-            className="mx-auto md:p-5 p-3 text-accent text-xl bg-primary gap-2 flex justify-center items-center rounded-xl hover:bg-green-500 delay-75 md:w-1/4 w-2/4"
+            className="whitespace-nowrap mx-auto md:p-5 p-3 text-accent text-xl bg-primary gap-2 flex justify-center items-center rounded-xl hover:bg-green-500 delay-75 md:w-1/4 sm:w-2/4 w-3/4"
           >
             Contact Us <FaArrowAltCircleRight />
           </Link>
